@@ -1,5 +1,5 @@
 chrome.action.onClicked.addListener((tab) => {
-
+  console.log("Executing bg")
     chrome.scripting.executeScript({
       target: {tabId: tab.id},
       files: ['scripts/content.js']
