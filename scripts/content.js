@@ -12,139 +12,160 @@ let codeToDOM = `<div class="layout-container" id="layout-container">
 <div id="marked-aria-label"></div>
 </div>
 
-<!--div id='page-title-container' class="tooltip">
-<div class="tooltip-text"> Page title: <strong>Starbucks Home page</strong> </div>
-<button id="close-page-title-btn" class="tooltip-btn"><i class="fa-solid fa-times"></i></button>
+<!--div id='page-title-container' class="tk-tooltip">
+<div class="tk-tooltip-text"> Page title: <strong>Starbucks Home page</strong> </div>
+<button id="close-page-title-btn" class="tk-tooltip-btn"><i class="fa-solid fa-times"></i></button>
 </div-->
-<div class="toolkit transition-all" id='toolkit' >
+<div class="toolkit transition-all" id='toolkit' translate="no">
 <!-- Tooltip -->
-<!--div class="tooltip">
-    <div class="tooltip-icon"><i class="fa-solid fa-caret-left"></i></div>
-    <div class="tooltip-text">Heading asdasdas das</div>
+<!--div class="tk-tooltip">
+    <div class="tk-tooltip-icon"><i class="fa-solid fa-caret-left"></i></div>
+    <div class="tk-tooltip-text">Heading asdasdas das</div>
 </div   -->
 
 <div id="expandable-section" style="display:block" class="transition-all">
     <div id="testing-toolkit">
         <!-- Headings -->
-        <button id = "headings-btn" class="centered btn-dark toolkit-btn">
+        <button id = "headings-btn" class="tk-centered tk-btn-dark tk-toolkit-btn">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="20px" height="20px" fill="white">
                 <path d="M0 64C0 46.3 14.3 32 32 32H80h48c17.7 0 32 14.3 32 32s-14.3 32-32 32H112V208H336V96H320c-17.7 0-32-14.3-32-32s14.3-32 32-32h48 48c17.7 0 32 14.3 32 32s-14.3 32-32 32H400V240 416h16c17.7 0 32 14.3 32 32s-14.3 32-32 32H368 320c-17.7 0-32-14.3-32-32s14.3-32 32-32h16V272H112V416h16c17.7 0 32 14.3 32 32s-14.3 32-32 32H80 32c-17.7 0-32-14.3-32-32s14.3-32 32-32H48V240 96H32C14.3 96 0 81.7 0 64z"/>
             </svg>  
         </button>
+        <div class="tk-separator"></div>
         <!-- Lists/Listitems -->
-        <button id = "lists-btn" class="centered btn-dark toolkit-btn">
+        <button id = "lists-btn" class="tk-centered tk-btn-dark tk-toolkit-btn">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="20px" height="20px" fill="white">
                 <path d="M64 144a48 48 0 1 0 0-96 48 48 0 1 0 0 96zM192 64c-17.7 0-32 14.3-32 32s14.3 32 32 32H480c17.7 0 32-14.3 32-32s-14.3-32-32-32H192zm0 160c-17.7 0-32 14.3-32 32s14.3 32 32 32H480c17.7 0 32-14.3 32-32s-14.3-32-32-32H192zm0 160c-17.7 0-32 14.3-32 32s14.3 32 32 32H480c17.7 0 32-14.3 32-32s-14.3-32-32-32H192zM64 464a48 48 0 1 0 0-96 48 48 0 1 0 0 96zm48-208a48 48 0 1 0 -96 0 48 48 0 1 0 96 0z"/>
             </svg>
         </button>
+        <div class="tk-separator"></div>
         <!-- Alternative text -->
-        <button id = 'image-alt-text-btn' class="centered btn-dark toolkit-btn" >
+        <button id = 'image-alt-text-btn' class="tk-centered tk-btn-dark tk-toolkit-btn" >
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="20px" height="20px" fill="white">
                 <path d="M448 80c8.8 0 16 7.2 16 16V415.8l-5-6.5-136-176c-4.5-5.9-11.6-9.3-19-9.3s-14.4 3.4-19 9.3L202 340.7l-30.5-42.7C167 291.7 159.8 288 152 288s-15 3.7-19.5 10.1l-80 112L48 416.3l0-.3V96c0-8.8 7.2-16 16-16H448zM64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm80 192a48 48 0 1 0 0-96 48 48 0 1 0 0 96z"/>
             </svg>
             <i class="fa-regular fa-image fa-lg"></i>
         </button>
+        <div class="tk-separator"></div>
         <!-- Null alternative text -->
-        <button id = 'image-null-alt-text-btn' class="centered btn-dark toolkit-btn" >
+        <button id = 'image-null-alt-text-btn' class="tk-centered tk-btn-dark tk-toolkit-btn" >
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" width="20px" height="20px" fill="white">
                 <path d="M160 80H512c8.8 0 16 7.2 16 16V320c0 8.8-7.2 16-16 16H490.8L388.1 178.9c-4.4-6.8-12-10.9-20.1-10.9s-15.7 4.1-20.1 10.9l-52.2 79.8-12.4-16.9c-4.5-6.2-11.7-9.8-19.4-9.8s-14.8 3.6-19.4 9.8L175.6 336H160c-8.8 0-16-7.2-16-16V96c0-8.8 7.2-16 16-16zM96 96V320c0 35.3 28.7 64 64 64H512c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H160c-35.3 0-64 28.7-64 64zM48 120c0-13.3-10.7-24-24-24S0 106.7 0 120V344c0 75.1 60.9 136 136 136H456c13.3 0 24-10.7 24-24s-10.7-24-24-24H136c-48.6 0-88-39.4-88-88V120zm208 24a32 32 0 1 0 -64 0 32 32 0 1 0 64 0z"/>
             </svg>
         </button>
+        <div class="tk-separator"></div>
         <!-- href -->
-        <button id='href-btn' class="centered btn-dark toolkit-btn">
+        <button id='href-btn' class="tk-centered tk-btn-dark tk-toolkit-btn">
             href
         </button>
+        <div class="tk-separator"></div>
         <!-- Br finder -->
-        <button id='brfinder-btn' class="centered btn-dark toolkit-btn" >
+        <button id='brfinder-btn' class="tk-centered tk-btn-dark tk-toolkit-btn" >
             Br
         </button>
+        <div class="tk-separator"></div>
         <!-- Live regions -->
-        <button id = 'liveregions-btn' class="centered btn-dark toolkit-btn">
+        <button id = 'liveregions-btn' class="tk-centered tk-btn-dark tk-toolkit-btn">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="20px" height="20px" fill="white">
                 <path d="M480 32c0-12.9-7.8-24.6-19.8-29.6s-25.7-2.2-34.9 6.9L381.7 53c-48 48-113.1 75-181 75H192 160 64c-35.3 0-64 28.7-64 64v96c0 35.3 28.7 64 64 64l0 128c0 17.7 14.3 32 32 32h64c17.7 0 32-14.3 32-32V352l8.7 0c67.9 0 133 27 181 75l43.6 43.6c9.2 9.2 22.9 11.9 34.9 6.9s19.8-16.6 19.8-29.6V300.4c18.6-8.8 32-32.5 32-60.4s-13.4-51.6-32-60.4V32zm-64 76.7V240 371.3C357.2 317.8 280.5 288 200.7 288H192V192h8.7c79.8 0 156.5-29.8 215.3-83.3z"/>
             </svg>
         </button>
+        <div class="tk-separator"></div>
         <!-- Focus indicator -->
-        <button id ='focus-indicator-btn' class="centered btn-dark toolkit-btn">
+        <button id ='focus-indicator-btn' class="tk-centered tk-btn-dark tk-toolkit-btn">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="20px" height="20px" fill="white">
                 <path d="M368 80h32v32H368V80zM352 32c-17.7 0-32 14.3-32 32H128c0-17.7-14.3-32-32-32H32C14.3 32 0 46.3 0 64v64c0 17.7 14.3 32 32 32V352c-17.7 0-32 14.3-32 32v64c0 17.7 14.3 32 32 32H96c17.7 0 32-14.3 32-32H320c0 17.7 14.3 32 32 32h64c17.7 0 32-14.3 32-32V384c0-17.7-14.3-32-32-32V160c17.7 0 32-14.3 32-32V64c0-17.7-14.3-32-32-32H352zM96 160c17.7 0 32-14.3 32-32H320c0 17.7 14.3 32 32 32V352c-17.7 0-32 14.3-32 32H128c0-17.7-14.3-32-32-32V160zM48 400H80v32H48V400zm320 32V400h32v32H368zM48 112V80H80v32H48z"/>
             </svg>
             
         </button>
+        <div class="tk-separator"></div>
         <!-- currently focused-->
-        <button id ='currently-focused-btn' class="centered btn-dark toolkit-btn">
+        <button id ='currently-focused-btn' class="tk-centered tk-btn-dark tk-toolkit-btn">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="20px" height="20px" fill="white">
                 <path d="M32 32C14.3 32 0 46.3 0 64v96c0 17.7 14.3 32 32 32s32-14.3 32-32V96h64c17.7 0 32-14.3 32-32s-14.3-32-32-32H32zM64 352c0-17.7-14.3-32-32-32s-32 14.3-32 32v96c0 17.7 14.3 32 32 32h96c17.7 0 32-14.3 32-32s-14.3-32-32-32H64V352zM320 32c-17.7 0-32 14.3-32 32s14.3 32 32 32h64v64c0 17.7 14.3 32 32 32s32-14.3 32-32V64c0-17.7-14.3-32-32-32H320zM448 352c0-17.7-14.3-32-32-32s-32 14.3-32 32v64H320c-17.7 0-32 14.3-32 32s14.3 32 32 32h96c17.7 0 32-14.3 32-32V352z"/>
             </svg>
         </button>
+        <div class="tk-separator"></div>
         <!-- Text spacing -->
-        <button id ='text-spacing-btn' class="centered btn-dark toolkit-btn">
+        <button id ='text-spacing-btn' class="tk-centered tk-btn-dark tk-toolkit-btn">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" width="20px" height="20px" fill="white">
                 <path d="M64 128V96h64l0 320H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H224c17.7 0 32-14.3 32-32s-14.3-32-32-32H192l0-320h64v32c0 17.7 14.3 32 32 32s32-14.3 32-32V80c0-26.5-21.5-48-48-48H160 48C21.5 32 0 53.5 0 80v48c0 17.7 14.3 32 32 32s32-14.3 32-32zM502.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-64 64c-9.2 9.2-11.9 22.9-6.9 34.9s16.6 19.8 29.6 19.8h32V352H416c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9l64 64c12.5 12.5 32.8 12.5 45.3 0l64-64c9.2-9.2 11.9-22.9 6.9-34.9s-16.6-19.8-29.6-19.8H512V160h32c12.9 0 24.6-7.8 29.6-19.8s2.2-25.7-6.9-34.9l-64-64z"/></svg>
             <i class="fa-solid fa-text-height"></i>
         </button>
+        <div class="tk-separator"></div>
         <!-- Aria-label -->
-        <button id = "aria-labels-btn" class="centered btn-dark toolkit-btn">
+        <button id = "aria-labels-btn" class="tk-centered tk-btn-dark tk-toolkit-btn">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" width="20px" height="20px" fill="white">
                 <path d="M112 0C99.1 0 87.4 7.8 82.5 19.7l-66.7 160-13.3 32c-6.8 16.3 .9 35 17.2 41.8s35-.9 41.8-17.2L66.7 224h90.7l5.1 12.3c6.8 16.3 25.5 24 41.8 17.2s24-25.5 17.2-41.8l-13.3-32-66.7-160C136.6 7.8 124.9 0 112 0zm18.7 160H93.3L112 115.2 130.7 160zM256 32v96 96c0 17.7 14.3 32 32 32h80c44.2 0 80-35.8 80-80c0-23.1-9.8-43.8-25.4-58.4c6-11.2 9.4-24 9.4-37.6c0-44.2-35.8-80-80-80H288c-17.7 0-32 14.3-32 32zm96 64H320V64h32c8.8 0 16 7.2 16 16s-7.2 16-16 16zm-32 64h32 16c8.8 0 16 7.2 16 16s-7.2 16-16 16H320V160zM566.6 310.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L352 434.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l96 96c12.5 12.5 32.8 12.5 45.3 0l192-192z"/>
             </svg>
         </button>
+        <div class="tk-separator"></div>
         <!-- Page title -->
-        <button id="page-title-btn" class="centered btn-dark toolkit-btn" >
+        <button id="page-title-btn" class="tk-centered tk-btn-dark tk-toolkit-btn" >
             Title
         </button>
+        <div class="tk-separator"></div>
         <!-- UTest toolkit button-->
-        <button id = "utest-toolkit-btn" class="centered btn-dark toolkit-btn">
-            <img src="uty-icon-48.png" height="30px" width="30px" style="margin-top:5px;border-radius: 3px;"> 
+        <button id = "utest-toolkit-btn" class="tk-centered tk-btn-dark tk-toolkit-btn" style="background-color: #2d529a;padding: 3px; border-radius: 10px;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 512" width="18px" height="18px" fill="white" style="padding-top: 5px;">
+                <path d="M0 160v96C0 379.7 100.3 480 224 480s224-100.3 224-224V160H320v96c0 53-43 96-96 96s-96-43-96-96V160H0zm0-32H128V64c0-17.7-14.3-32-32-32H32C14.3 32 0 46.3 0 64v64zm320 0H448V64c0-17.7-14.3-32-32-32H352c-17.7 0-32 14.3-32 32v64z"/>
+            </svg>
         </button>
     </div>
     <div id="utest-toolkit" style="display:none">
-        <!-- Bold title : separator-->
-        <button id="bold-title-column-btn" class="centered btn-dark toolkit-btn light-blue" >
+        <!-- Bold title : tk-separator-->
+        <button id="bold-title-column-btn" class="tk-centered tk-btn-dark tk-toolkit-btn light-blue" >
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" width="20px" height="20px" fill="white">
                 <path d="M0 64C0 46.3 14.3 32 32 32H80 96 224c70.7 0 128 57.3 128 128c0 31.3-11.3 60.1-30 82.3c37.1 22.4 62 63.1 62 109.7c0 70.7-57.3 128-128 128H96 80 32c-17.7 0-32-14.3-32-32s14.3-32 32-32H48V256 96H32C14.3 96 0 81.7 0 64zM224 224c35.3 0 64-28.7 64-64s-28.7-64-64-64H112V224H224zM112 288V416H256c35.3 0 64-28.7 64-64s-28.7-64-64-64H224 112z"/>
             </svg><strong>:</strong>
         </button>
-         <!-- Bold title / separator -->
-        <button id="bold-title-slash-btn" class="centered btn-dark toolkit-btn light-blue" >
+        <div class="tk-separator"></div>
+         <!-- Bold title / tk-separator -->
+        <button id="bold-title-slash-btn" class="tk-centered tk-btn-dark tk-toolkit-btn light-blue" >
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" width="20px" height="20px" fill="white">
                 <path d="M0 64C0 46.3 14.3 32 32 32H80 96 224c70.7 0 128 57.3 128 128c0 31.3-11.3 60.1-30 82.3c37.1 22.4 62 63.1 62 109.7c0 70.7-57.3 128-128 128H96 80 32c-17.7 0-32-14.3-32-32s14.3-32 32-32H48V256 96H32C14.3 96 0 81.7 0 64zM224 224c35.3 0 64-28.7 64-64s-28.7-64-64-64H112V224H224zM112 288V416H256c35.3 0 64-28.7 64-64s-28.7-64-64-64H224 112z"/>
             </svg><strong>/</strong>
         </button>
+        <div class="tk-separator"></div>
         <!-- Hide my bugs -->
-        <button id="hide-my-bugs-btn" class="centered btn-dark toolkit-btn light-blue" >
+        <button id="hide-my-bugs-btn" class="tk-centered tk-btn-dark tk-toolkit-btn light-blue" >
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" width="20px" height="20px" fill="white">
                 <path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zm151 118.3C226 97.7 269.5 80 320 80c65.2 0 118.8 29.6 159.9 67.7C518.4 183.5 545 226 558.6 256c-12.6 28-36.6 66.8-70.9 100.9l-53.8-42.2c9.1-17.6 14.2-37.5 14.2-58.7c0-70.7-57.3-128-128-128c-32.2 0-61.7 11.9-84.2 31.5l-46.1-36.1zM394.9 284.2l-81.5-63.9c4.2-8.5 6.6-18.2 6.6-28.3c0-5.5-.7-10.9-2-16c.7 0 1.3 0 2 0c44.2 0 80 35.8 80 80c0 9.9-1.8 19.4-5.1 28.2zm9.4 130.3C378.8 425.4 350.7 432 320 432c-65.2 0-118.8-29.6-159.9-67.7C121.6 328.5 95 286 81.4 256c8.3-18.4 21.5-41.5 39.4-64.8L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5l-41.9-33zM192 256c0 70.7 57.3 128 128 128c13.3 0 26.1-2 38.2-5.8L302 334c-23.5-5.4-43.1-21.2-53.7-42.3l-56.1-44.2c-.2 2.8-.3 5.6-.3 8.5z"/>
             </svg>
         </button> 
+        <div class="tk-separator"></div>
         <!-- Issues with +1s -->
-        <button id="issues-with-plus-1-btn" class="centered btn-dark toolkit-btn light-blue" >
+        <button id="issues-with-plus-1-btn" class="tk-centered tk-btn-dark tk-toolkit-btn light-blue" >
             <strong>+1s</strong>
         </button> 
+        <div class="tk-separator"></div>
         <!-- Filter selected bugs -->
-        <button id="filter-selected-bugs-btn" class="centered btn-dark toolkit-btn light-blue" >
+        <button id="filter-selected-bugs-btn" class="tk-centered tk-btn-dark tk-toolkit-btn light-blue" >
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" width="20px" height="20px" fill="white">
                 <path d="M152.1 38.2c9.9 8.9 10.7 24 1.8 33.9l-72 80c-4.4 4.9-10.6 7.8-17.2 7.9s-12.9-2.4-17.6-7L7 113C-2.3 103.6-2.3 88.4 7 79s24.6-9.4 33.9 0l22.1 22.1 55.1-61.2c8.9-9.9 24-10.7 33.9-1.8zm0 160c9.9 8.9 10.7 24 1.8 33.9l-72 80c-4.4 4.9-10.6 7.8-17.2 7.9s-12.9-2.4-17.6-7L7 273c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l22.1 22.1 55.1-61.2c8.9-9.9 24-10.7 33.9-1.8zM224 96c0-17.7 14.3-32 32-32H480c17.7 0 32 14.3 32 32s-14.3 32-32 32H256c-17.7 0-32-14.3-32-32zm0 160c0-17.7 14.3-32 32-32H480c17.7 0 32 14.3 32 32s-14.3 32-32 32H256c-17.7 0-32-14.3-32-32zM160 416c0-17.7 14.3-32 32-32H480c17.7 0 32 14.3 32 32s-14.3 32-32 32H192c-17.7 0-32-14.3-32-32zM48 368a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"/>
             </svg>
         </button> 
+        <div class="tk-separator"></div>
         <!-- Mark row by double click -->
-        <button id="mark-row-dbl-click-btn" class="centered btn-dark toolkit-btn light-blue" >
+        <button id="mark-row-dbl-click-btn" class="tk-centered tk-btn-dark tk-toolkit-btn light-blue" >
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" width="20px" height="20px" fill="white">
                 <path d="M192 64L160 0H128L96 64 64 0H48C21.5 0 0 21.5 0 48V256H384V48c0-26.5-21.5-48-48-48H224L192 64zM0 288v32c0 35.3 28.7 64 64 64h64v64c0 35.3 28.7 64 64 64s64-28.7 64-64V384h64c35.3 0 64-28.7 64-64V288H0zM192 432a16 16 0 1 1 0 32 16 16 0 1 1 0-32z"/>
             </svg>
         </button> 
+        <div class="tk-separator"></div>
         <div class="bg-dark-blue">
             <!-- BBVA Session extension -->
-            <button id="bbva-session-extension-btn" class="centered btn-dark toolkit-btn light-blue bg-dark-blue" >
+            <button id="bbva-session-extension-btn" class="tk-centered tk-btn-dark tk-toolkit-btn light-blue bg-dark-blue" >
                 <div class="pilled-button-container">
                     <div class = "pill">BBVA</div>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 512" width="20px" height="20px" fill="white">
                         <path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/>
                     </svg>
                 </div>
-            </button>      
+            </button>    
+            <div class="tk-separator"></div>  
             <!-- USBank filter by components -->
-            <button id="usb-filter-by-components" class="centered btn-dark toolkit-btn light-blue bg-dark-blue" >
+            <button id="usb-filter-by-components" class="tk-centered tk-btn-dark tk-toolkit-btn light-blue bg-dark-blue" >
                 <div class="pilled-button-container">
                     <div class = "pill">USBank</div>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" width="20px" height="20px" fill="white">
@@ -152,8 +173,9 @@ let codeToDOM = `<div class="layout-container" id="layout-container">
                         </svg>
                 </div>
             </button>
+            <div class="tk-separator"></div>
             <!-- Test case preview -->
-            <button id="test-case-preview-btn" class="centered btn-dark toolkit-btn light-blue bg-dark-blue" >
+            <button id="test-case-preview-btn" class="tk-centered tk-btn-dark tk-toolkit-btn light-blue bg-dark-blue" >
                 <div class="pilled-button-container">
                     <div class = "pill">BFV</div>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 512" width="20px" height="20px" fill="white">
@@ -161,23 +183,27 @@ let codeToDOM = `<div class="layout-container" id="layout-container">
                     </svg>
                 </div>
             </button>
+            <div class="tk-separator"></div>
             <!-- Unclaimed Test case -->
-            <button id="unclaimed-test-case-btn" class="centered btn-dark toolkit-btn light-blue bg-dark-blue" >
+            <button id="unclaimed-test-case-btn" class="tk-centered tk-btn-dark toolkit-btn light-blue bg-dark-blue" >
                 <div class="pilled-button-container ">
                     <div class = "pill">BFV</div>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 512" width="20px" height="20px" fill="white">
                         <path d="M32 0C49.7 0 64 14.3 64 32V48l69-17.2c38.1-9.5 78.3-5.1 113.5 12.5c46.3 23.2 100.8 23.2 147.1 0l9.6-4.8C423.8 28.1 448 43.1 448 66.1V345.8c0 13.3-8.3 25.3-20.8 30l-34.7 13c-46.2 17.3-97.6 14.6-141.7-7.4c-37.9-19-81.4-23.7-122.5-13.4L64 384v96c0 17.7-14.3 32-32 32s-32-14.3-32-32V400 334 64 32C0 14.3 14.3 0 32 0zM64 187.1l64-13.9v65.5L64 252.6V318l48.8-12.2c5.1-1.3 10.1-2.4 15.2-3.3V238.7l38.9-8.4c8.3-1.8 16.7-2.5 25.1-2.1l0-64c13.6 .4 27.2 2.6 40.4 6.4l23.6 6.9v66.7l-41.7-12.3c-7.3-2.1-14.8-3.4-22.3-3.8v71.4c21.8 1.9 43.3 6.7 64 14.4V244.2l22.7 6.7c13.5 4 27.3 6.4 41.3 7.4V194c-7.8-.8-15.6-2.3-23.2-4.5l-40.8-12v-62c-13-3.8-25.8-8.8-38.2-15c-8.2-4.1-16.9-7-25.8-8.8v72.4c-13-.4-26 .8-38.7 3.6L128 173.2V98L64 114v73.1zM320 335.7c16.8 1.5 33.9-.7 50-6.8l14-5.2V251.9l-7.9 1.8c-18.4 4.3-37.3 5.7-56.1 4.5v77.4zm64-149.4V115.4c-20.9 6.1-42.4 9.1-64 9.1V194c13.9 1.4 28 .5 41.7-2.6l22.3-5.2z"/>
                     </svg>
                 </div>
-            </button>                      
+            </button>     
+            <div class="tk-separator"></div>                 
         </div>        
         <!-- UTest toolkit button-->
-        <button id = "testing-toolkit-btn" class="centered btn-dark toolkit-btn light-blue">
-            <img src="toolkit-icon-48.png" height="30px" width="30px" style="margin-top:0;border-radius: 3px;">  
+        <button id = "testing-toolkit-btn" class="tk-centered tk-btn-dark tk-toolkit-btn light-blue" style="background-color: #132342; padding: 3px; border-radius: 10px;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 512" width="18px" height="18px" fill="white"  style="padding-top: 5px;">
+                <path d="M78.6 5C69.1-2.4 55.6-1.5 47 7L7 47c-8.5 8.5-9.4 22-2.1 31.6l80 104c4.5 5.9 11.6 9.4 19 9.4h54.1l109 109c-14.7 29-10 65.4 14.3 89.6l112 112c12.5 12.5 32.8 12.5 45.3 0l64-64c12.5-12.5 12.5-32.8 0-45.3l-112-112c-24.2-24.2-60.6-29-89.6-14.3l-109-109V104c0-7.5-3.5-14.5-9.4-19L78.6 5zM19.9 396.1C7.2 408.8 0 426.1 0 444.1C0 481.6 30.4 512 67.9 512c18 0 35.3-7.2 48-19.9L233.7 374.3c-7.8-20.9-9-43.6-3.6-65.1l-61.7-61.7L19.9 396.1zM512 144c0-10.5-1.1-20.7-3.2-30.5c-2.4-11.2-16.1-14.1-24.2-6l-63.9 63.9c-3 3-7.1 4.7-11.3 4.7H352c-8.8 0-16-7.2-16-16V102.6c0-4.2 1.7-8.3 4.7-11.3l63.9-63.9c8.1-8.1 5.2-21.8-6-24.2C388.7 1.1 378.5 0 368 0C288.5 0 224 64.5 224 144l0 .8 85.3 85.3c36-9.1 75.8 .5 104 28.7L429 274.5c49-23 83-72.8 83-130.5zM56 432a24 24 0 1 1 48 0 24 24 0 1 1 -48 0z"/>
+            </svg>
         </button>
     </div>
 </div>
-<button id = "expand-collapse-btn" class="centered btn-dark toolkit-btn" style="border-bottom: none;transform: rotate(180deg);" >
+<button id = "expand-collapse-btn" class="tk-centered tk-btn-dark tk-toolkit-btn" style="border-bottom: none;transform: rotate(180deg);" >
     <svg class="transition-all" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" width="20px" height="20px" fill="white">
         <path d="M214.6 470.6c-12.5 12.5-32.8 12.5-45.3 0l-160-160c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 402.7 329.4 265.4c12.5-12.5 32.8-12.5 45.3 0s12.5 32.8 0 45.3l-160 160zm160-352l-160 160c-12.5 12.5-32.8 12.5-45.3 0l-160-160c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 210.7 329.4 73.4c12.5-12.5 32.8-12.5 45.3 0s12.5 32.8 0 45.3z"/>
     </svg> 
@@ -261,7 +287,7 @@ const scrollToTop = () => {
     window.scrollTo(0, 0)
 }
 const activateStyle = (elm) => {
-    elm.classList.add('toolkit-active-btn')
+    elm.classList.add('tk-toolkit-active-btn')
 }
 const toggleButton =(elm)=>{
 
@@ -273,10 +299,10 @@ const toggleButton =(elm)=>{
     }
     else{
 
-        if(elm.classList.contains('toolkit-active-btn')) 
-            elm.classList.remove('toolkit-active-btn')
+        if(elm.classList.contains('tk-toolkit-active-btn')) 
+            elm.classList.remove('tk-toolkit-active-btn')
         else
-            elm.classList.add('toolkit-active-btn')
+            elm.classList.add('tk-toolkit-active-btn')
         
     }
 
@@ -389,7 +415,7 @@ const markElementDisplayAttributeValue = (elm, attribute, color, style, containe
     position:absolute;${style}width:max-content;height:25px;padding:0 3px;
     border-radius:3px;background-color:${color};color:white;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
-    ${elm.getAttribute(attribute)}
+    ${elm.getAttribute(attribute)? elm.getAttribute(attribute) : 'Empty' }
     </div>`
 
     parentElementLayoutContainer.insertAdjacentElement("beforeend",outlineDiv)
@@ -400,7 +426,7 @@ const clearOverlay = (containerId) => {
     parentElementLayoutContainer.innerHTML=''
 }
 const isActivatedTheBtn = (btn) => {
-    if(!btn.classList.contains('toolkit-active-btn')) 
+    if(!btn.classList.contains('tk-toolkit-active-btn')) 
         return true
     else
         return false
@@ -473,38 +499,69 @@ const markBrs = () =>{
 }
 const markLiveRegions = () =>{
     const liveRegions = document.querySelectorAll("[aria-live='polite'],[aria-live='assertive'],[role='status'],[role='alert']")
-    liveRegions.forEach(elm=>{
-        markElement(elm,"red",innerStyle,"marked-liveregions")
-    })
+    let counter = 0
     console.clear()
-    console.log(liveRegions.length + ' live regions elements found on the page')
+    console.log('------------------------')
+    liveRegions.forEach(elm=>{
+        console.log("Element ", counter + 1)
+        console.log(elm)
+        markElement(elm, "red", innerStyle, "marked-liveregions")
+        counter++
+    })
+
+    console.log(counter + ' live regions elements found on the page')
+    console.log('------------------------')
+    
+    //console.log(liveRegions.length + ' live regions elements found on the page')
 }
 const markImageAltText = () =>{
     const images = document.querySelectorAll("img")
     const ariaImages = document.querySelectorAll("[role='img']")
-    
-    images.forEach(elm=>{
-        markElementDisplayAttribute(elm,"alt","red",innerStyle,"marked-images-alt-text")
-    })
-    ariaImages.forEach(elm=>{
-        markElementDisplayAttribute(elm,"aria-label","red",innerStyle,"marked-images-alt-text")
-    })
-    console.clear()
-    console.log(images.length + ariaImages.length + ' images found on the page')
-}
-const markImageNullAlt = () =>{
     let counter = 0
-    const images = document.querySelectorAll("img")
+    
+    console.clear()
 
     images.forEach(elm=>{
-        if(!elm.getAttribute("alt")){
-            markElementDisplayAttribute(elm,"alt","red",innerStyle,"marked-images-null-alt-text")
+        if(!document.getElementById('toolkit').contains(elm)){
+            console.log('Element ', counter + 1)
+            console.log(elm)
+            markElementDisplayAttribute(elm,"alt","red",innerStyle,"marked-images-alt-text")
             counter++
         }
     })
+
+    ariaImages.forEach(elm=>{
+        if(!document.getElementById('toolkit').contains(elm)){
+            console.log('Element ', counter + 1)
+            console.log(elm)
+            markElementDisplayAttribute(elm,"aria-label","red",innerStyle,"marked-images-alt-text")
+            counter++
+        }
+    })
+    
+    console.log(counter + ' images found on the page')
+
+}
+
+const markImageNullAlt = () =>{
+    let counter = 0
+    const images = document.querySelectorAll("img")
+    
     console.clear()
+    images.forEach(elm=>{
+        if(!elm.getAttribute("alt")){
+            if(!document.getElementById('toolkit').contains(elm)){
+                console.log('Element ', counter + 1)
+                console.log(elm)
+                markElementDisplayAttribute(elm,"alt","red",innerStyle,"marked-images-null-alt-text")
+                counter++
+            }
+        }
+    })
+    
     console.log(counter + ' images found on the page with null attribute.')
 }
+
 const markHrefs = () =>{
     let linksSameUrls = 0
     const links = document.querySelectorAll("a")
@@ -544,9 +601,11 @@ const markAriaLabels = () =>{
 
 const headings = () =>{
 
-    scrollToTop()
-    if(isActivatedTheBtn(headingBtn)) 
+    
+    if(isActivatedTheBtn(headingBtn)) {
+        scrollToTop()
         markHeadings()
+    }
     else 
         clearOverlay('marked-headings')
 
@@ -560,9 +619,10 @@ const expandCollapse = () =>{
 }
 const listsListitems = () =>{
 
-    scrollToTop()
-    if(isActivatedTheBtn(listsBtn)) 
+    if(isActivatedTheBtn(listsBtn)) {
+        scrollToTop()
         markListsListitems()
+    }
     else 
         clearOverlay('marked-listslistitems')
 
@@ -570,9 +630,10 @@ const listsListitems = () =>{
 }
 const brFinder = () => {
 
-    scrollToTop()
-    if(isActivatedTheBtn(brFinderBtn)) 
+    if(isActivatedTheBtn(brFinderBtn)) {
+        scrollToTop()
         markBrs()
+    }
     else 
         clearOverlay('marked-brs')
 
@@ -580,36 +641,44 @@ const brFinder = () => {
 }
 const liveRegions = () => {
 
-    scrollToTop()
-    if(isActivatedTheBtn(liveRegionsBtn)) 
+    if(isActivatedTheBtn(liveRegionsBtn)) {
+        scrollToTop()
         markLiveRegions()
+    }
     else 
         clearOverlay('marked-liveregions')
 
     toggleButton(liveRegionsBtn)
 }
 const imageAlText = () =>{
-    scrollToTop()
-    if(isActivatedTheBtn(imageAltText)) 
+    
+    if(isActivatedTheBtn(imageAltText)) {
+        scrollToTop()
         markImageAltText()
+    }
     else 
         clearOverlay('marked-images-alt-text')
 
     toggleButton(imageAltText)
 }
 const imageWithNullAltText = () =>{
-    scrollToTop()
-    if(isActivatedTheBtn(imageNullAltTextbtn)) 
+    
+    if(isActivatedTheBtn(imageNullAltTextbtn)) {
+        scrollToTop()
         markImageNullAlt()
+    }
+        
     else 
         clearOverlay('marked-images-null-alt-text')
 
     toggleButton(imageNullAltTextbtn)
 }
 const hrefs = () =>{
-    scrollToTop()
-    if(isActivatedTheBtn(hrefBtn)) 
+    
+    if(isActivatedTheBtn(hrefBtn)) {
+        scrollToTop()
         markHrefs()
+    }
     else 
         clearOverlay('marked-hrefs')
 
@@ -673,20 +742,21 @@ const textSpacing = () => {
 }
 const ariaLabels = () => {
 
-    scrollToTop()
+    
     if(isActivatedTheBtn(ariaLabelsBtn)){
+        scrollToTop()
         markAriaLabels()
     }
-    else{
+    else
         clearOverlay('marked-aria-label')
-    }
+
 
     toggleButton(ariaLabelsBtn)
 }
 const pageTitle = () => {
     const titleElement = document.getElementsByTagName("title")[0]
-    pageTitleContainer = `<div id='page-title-container' class="tooltip">
-    <div class="tooltip-text"> Page title: <strong>${titleElement.innerHTML}</strong> </div>
+    pageTitleContainer = `<div id='page-title-container' class="tk-tooltip">
+    <div class="tk-tooltip-text"> Page title: <strong>${titleElement.innerHTML}</strong> </div>
     </div>`
     const titleContainer = document.createElement("div")
     const titleContainerInDOM = document.getElementById('page-title-container')
@@ -718,6 +788,8 @@ const testCasePreview = ()=>{
     const details = document.getElementsByClassName('details')[0];
     details.style.setProperty('white-space', 'pre-wrap', 'important');
 
+    toggleButton(testCasePreviewBtn)
+    
     function extractInfo(html) {
         var result = {};
         // Extract Action Details
@@ -767,6 +839,8 @@ const unclaimedTestCase = () =>{
 }
 const boldTitleColumnSeparator = ()=>{
     // BOLD TITLES in platforms
+    toggleButton(boldTitleColumnSeparatorBtn)
+
 console.log('Bolding ...')
     var index;
     var first;
@@ -792,6 +866,9 @@ console.log('Bolding ...')
 }
 
 const boldTitleSlashSeparator = ()=>{
+
+    toggleButton(boldTitleSlashSeparatorBtn)
+
     // BOLD TITLES in platforms
     console.log('Bolding ...')
     var index;
@@ -817,6 +894,9 @@ const boldTitleSlashSeparator = ()=>{
     }
 }
 const usbFilterByComponents = () =>{
+
+    toggleButton(usbFilterByComponentsBtn)
+
     // Version 1.0
 // Filter Layout
 const targetElement = document.querySelector("#issueListTitle")
@@ -1000,6 +1080,9 @@ setTimeout(()=>{
 })
 }
 const hideMyBugs = () =>{
+
+    toggleButton(hideMyBugsBtn)
+
     // Version 1.0
     const targetElement = document.querySelector("#issueListTitle")
     const checkbox = document.createElement('input');
@@ -1038,6 +1121,9 @@ const hideMyBugs = () =>{
     });
 }
 const issuesWithPlus1 = () =>{
+
+    toggleButton(issuesWithPlus1Btn)
+
     console.log("issuesWithPlus1")
     // Version 1.0
     let obtenerDatos = document.getElementsByTagName("span");
@@ -1061,6 +1147,9 @@ const issuesWithPlus1 = () =>{
 
 }
 const filterSelectedBugs = () =>{
+
+    toggleButton(filterSelectedBugsBtn)
+
     console.log("filterSelectedBugs")
     // Encontrar la tabla
     let table = document.querySelector(".responsive-table");
@@ -1135,6 +1224,8 @@ const filterSelectedBugs = () =>{
     firstRow.insertBefore(firstTD, firstRow.firstChild);
 }
 const markRowDblClick = () =>{
+
+    toggleButton(markRowByDblClickBtn)
     document.addEventListener('dblclick',(ev)=>{
         const targetElm = ev.target
         const parentElement = ev.target.parentElement
@@ -1155,6 +1246,9 @@ const markRowDblClick = () =>{
     })
 }
 const bbvaSessionExtention = ()=>{
+
+    toggleButton(markRowByDblClickBtn)
+
     // ==UserScript==
     // @name         BBVA timeout killer
     // @author       Antoine Ferreira
@@ -1256,7 +1350,6 @@ mouseoutEventListenerAssigner(pageTitleBtn,"mouseout", hideTooltip)
 
 // UTest toolkit
 
-
 clickEventListenerAssigner(utestToolkitBtn,"click", displayUtestToolkit )
 mouseoverEventListenerAssigner(utestToolkitBtn,"mouseover", showTooltip,'UTest Toolkit' )
 mouseoutEventListenerAssigner(utestToolkitBtn,"mouseout", hideTooltip)
@@ -1264,7 +1357,6 @@ mouseoutEventListenerAssigner(utestToolkitBtn,"mouseout", hideTooltip)
 clickEventListenerAssigner(testingToolkitBtn,"click", displayTestingToolkit )
 mouseoverEventListenerAssigner(testingToolkitBtn,"mouseover", showTooltip,'Testing Toolkit' )
 mouseoutEventListenerAssigner(testingToolkitBtn,"mouseout", hideTooltip)
-
 
 clickEventListenerAssigner(testCasePreviewBtn,"click", testCasePreview )
 mouseoverEventListenerAssigner(testCasePreviewBtn,"mouseover", showTooltip,'Test Case preview' )

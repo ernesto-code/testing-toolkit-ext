@@ -1,7 +1,11 @@
-.centered{
+*{
+    font-family: Arial;
+    font-weight: normal;
+}
+.tk-centered{
     margin:auto;
 }
-.btn-dark{
+.tk-btn-dark{
     width: fit-content;
     height: fit-content;
     margin: 10px;
@@ -12,39 +16,39 @@
     border-radius: 5px;
     font-size: 16px;
 }
-.btn-dark:focus, .btn-dark:hover{
+.tk-btn-dark:focus, .tk-btn-dark:hover{
     background-color: #20293b;
     outline:#132342 2px solid;
     outline-offset: 2px;
 }
-.btn-dark:active{
+.tk-btn-dark:active{
     background-color: #6e96e3 !important;
 }
-.separator{
+.tk-separator{
     width: 40px;
     height: 1px;
     border-bottom: #7a8293 2px dotted;
 }
-.toolkit-btn{
- width: 30px;
- height: 30px;
- margin: 5px;
- padding: 0;
- /*outline:#FFF 1px solid;*/
- text-align: center;
- border-radius: 0;
-}
-.toolkit-btn:focus, .toolkit-btn:hover{
-    outline:#f8f9fa 1px solid;
-    outline-offset: -2px;
-    background-color: #132342;
-    border-radius: 5px;
-}
-.toolkit-active-btn{
-    background-color: #3e5b98 !important;
-    border-radius: 5px;
-    border-bottom: none;
-}
+.tk-toolkit-btn{
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+    padding: 0;
+    /*outline:#FFF 1px solid;*/
+    text-align: center;
+    border-radius: 0;
+   }
+.tk-toolkit-btn:focus, .tk-toolkit-btn:hover{
+       outline:#f8f9fa 1px solid;
+       outline-offset: -2px;
+       background-color: #132342;
+       border-radius: 5px;
+   }
+.tk-toolkit-active-btn{
+       background-color: #3e5b98 !important;
+       border-radius: 5px;
+       border-bottom: none;
+   }
 
 /* Toolkit layout */
 
@@ -76,12 +80,14 @@
     left: 60px;
     width: fit-content;
     height: fit-content;
+    max-width: 1000px;
     padding: 10px;
     background-color: black;
     border: white thin solid;
     border-radius: 5px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     display: flex;
+    z-index: 2147483647;
     
 }
 .tk-tooltip-text{
@@ -233,4 +239,7 @@ li span strong{
     width: 15px;
     height: 15px;
     padding-top: 2px;
+}
+#expandable-section{
+    box-sizing: content-box;
 }
