@@ -287,8 +287,8 @@ const showTooltip = (textToShow,targetButton, coords)=>{
     tooltip = document.getElementById('button-tooltip')
     if(!tooltip){ 
         const tooltipContainer = document.createElement("div")
-        tooltipContainer.innerHTML = `<div class="tooltip" id='button-tooltip' style='position:fixed; top:${coords[0]}px;left:${coords[1]}px'>
-        <div class="tooltip-text">${textToShow}</div>
+        tooltipContainer.innerHTML = `<div class="tk-tooltip" id='button-tooltip' style='position:fixed; top:${coords[0]}px;left:${coords[1]}px'>
+        <div class="tk-tooltip-text">${textToShow}</div>
         </div>`
         targetButton.insertAdjacentElement('afterend',tooltipContainer)
     }
