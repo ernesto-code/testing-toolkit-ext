@@ -24,6 +24,19 @@
 .tk-btn-dark:active{
     background-color: #6e96e3 !important;
 }
+.tk-white-top-btn{
+    padding: 0;
+    margin: 1px;
+    width: 38px;
+    height: 18px;
+    background-color: white;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border:none
+    /* outline: #132342 1px solid; */
+    /* outline-offset: -2px; */
+
+}
 .tk-separator{
     width: 40px;
     height: 1px;
@@ -72,6 +85,7 @@
     border: white thin solid;
     border-radius: 10px;
     z-index: 2147483646;
+    box-sizing: content-box;
 }
 /*Tool tip*/
 .tk-tooltip{

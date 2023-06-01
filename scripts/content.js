@@ -25,6 +25,12 @@ let codeToDOM = `<div class="layout-container" id="layout-container">
 
 <div id="expandable-section" style="display:block" class="transition-all">
     <div id="testing-toolkit">
+        <!-- direction btn -->
+        <button id = "direction-btn" class="tk-white-top-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="20px" height="20px" fill="white">
+                <path d="M32 288c-17.7 0-32 14.3-32 32s14.3 32 32 32l384 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L32 288zm0-128c-17.7 0-32 14.3-32 32s14.3 32 32 32l384 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L32 160z"/>
+            </svg>  
+        </button>
         <!-- Headings -->
         <button id = "headings-btn" class="tk-centered tk-btn-dark tk-toolkit-btn">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="20px" height="20px" fill="white">
@@ -106,7 +112,7 @@ let codeToDOM = `<div class="layout-container" id="layout-container">
         </button>
         <div class="tk-separator"></div>
         <!-- UTest toolkit button-->
-        <button id = "utest-toolkit-btn" class="tk-centered tk-btn-dark tk-toolkit-btn" style="background-color: #2d529a;padding: 3px; border-radius: 10px;">
+        <button id = "utest-toolkit-btn" class="tk-centered tk-btn-dark tk-toolkit-btn" style="background-color: #2d529a;border-radius: 10px;">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 512" width="18px" height="18px" fill="white" style="padding-top: 5px;">
                 <path d="M0 160v96C0 379.7 100.3 480 224 480s224-100.3 224-224V160H320v96c0 53-43 96-96 96s-96-43-96-96V160H0zm0-32H128V64c0-17.7-14.3-32-32-32H32C14.3 32 0 46.3 0 64v64zm320 0H448V64c0-17.7-14.3-32-32-32H352c-17.7 0-32 14.3-32 32v64z"/>
             </svg>
@@ -450,7 +456,6 @@ const toggleIconRotation = (elm)=>{
         elm.style.transform = 'rotate(0deg)'
     }
 }
-
 const displayUtestToolkit = () =>{
     utestToolkit.style.display = 'block'
     testingToolkit.style.display = 'none'
@@ -465,6 +470,21 @@ const displayTestingToolkit = () =>{
     expandCollapseBtn.classList.remove('light-blue')
 }   
 
+const isElementVisible = (element) =>{
+
+    const displaying = window.getComputedStyle(element, null).display
+    const visibility = window.getComputedStyle(element, null).display
+
+    if(displaying == 'none')
+        return false
+    else{
+        if(visibility =='hidden')
+            return false
+        else
+            return true
+
+    }
+}
 
 // Marking Functions
 
@@ -523,26 +543,29 @@ const markImageAltText = () =>{
 
     images.forEach(elm=>{
         if(!document.getElementById('toolkit').contains(elm)){
-            console.log('Element ', counter + 1)
-            console.log(elm)
-            markElementDisplayAttribute(elm,"alt","red",innerStyle,"marked-images-alt-text")
-            counter++
+            if( isElementVisible(elm) ){
+                console.log('Element ', counter + 1)
+                console.log(elm)
+                markElementDisplayAttribute(elm,"alt","red",innerStyle,"marked-images-alt-text")
+                counter++
+            }
         }
     })
 
     ariaImages.forEach(elm=>{
         if(!document.getElementById('toolkit').contains(elm)){
-            console.log('Element ', counter + 1)
-            console.log(elm)
-            markElementDisplayAttribute(elm,"aria-label","red",innerStyle,"marked-images-alt-text")
-            counter++
+            if( isElementVisible(elm) ){
+                console.log('Element ', counter + 1)
+                console.log(elm)
+                markElementDisplayAttribute(elm,"aria-label","red",innerStyle,"marked-images-alt-text")
+                counter++
+            }
         }
     })
     
     console.log(counter + ' images found on the page')
 
 }
-
 const markImageNullAlt = () =>{
     let counter = 0
     const images = document.querySelectorAll("img")
@@ -551,10 +574,12 @@ const markImageNullAlt = () =>{
     images.forEach(elm=>{
         if(!elm.getAttribute("alt")){
             if(!document.getElementById('toolkit').contains(elm)){
-                console.log('Element ', counter + 1)
-                console.log(elm)
-                markElementDisplayAttribute(elm,"alt","red",innerStyle,"marked-images-null-alt-text")
-                counter++
+                if( isElementVisible(elm) ){
+                    console.log('Element ', counter + 1)
+                    console.log(elm)
+                    markElementDisplayAttribute(elm,"alt","red",innerStyle,"marked-images-null-alt-text")
+                    counter++
+                }
             }
         }
     })
@@ -736,8 +761,6 @@ const textSpacing = () => {
     }
 
     toggleButton(textSpacingBtn)
-
-
     
 }
 const ariaLabels = () => {
