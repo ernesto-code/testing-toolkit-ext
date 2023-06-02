@@ -24,6 +24,31 @@
 .tk-btn-dark:active{
     background-color: #6e96e3 !important;
 }
+.tk-separator{
+    width: 40px;
+    height: 1px;
+    border-bottom: #7a8293 2px dotted;
+}
+.tk-toolkit-btn{
+ width: 30px;
+ height: 30px;
+ margin: 5px;
+ padding: 0;
+ /*outline:#FFF 1px solid;*/
+ text-align: center;
+ border-radius: 0;
+}
+.tk-toolkit-btn:focus, .tk-toolkit-btn:hover{
+    outline:#f8f9fa 1px solid;
+    outline-offset: -2px;
+    background-color: #132342;
+    border-radius: 5px;
+}
+.tk-toolkit-active-btn{
+    background-color: #3e5b98 !important;
+    border-radius: 5px;
+    border-bottom: none;
+}
 .tk-white-top-btn{
     padding: 0;
     margin: 1px;
@@ -37,31 +62,13 @@
     /* outline-offset: -2px; */
 
 }
-.tk-separator{
-    width: 40px;
-    height: 1px;
-    border-bottom: #7a8293 2px dotted;
+#expandable-section{
+    display: flex;
+    flex-direction: column;
 }
-.tk-toolkit-btn{
-    width: 30px;
-    height: 30px;
-    margin: 5px;
-    padding: 0;
-    /*outline:#FFF 1px solid;*/
-    text-align: center;
-    border-radius: 0;
-   }
-.tk-toolkit-btn:focus, .tk-toolkit-btn:hover{
-       outline:#f8f9fa 1px solid;
-       outline-offset: -2px;
-       background-color: #132342;
-       border-radius: 5px;
-   }
-.tk-toolkit-active-btn{
-       background-color: #3e5b98 !important;
-       border-radius: 5px;
-       border-bottom: none;
-   }
+.row-view-expandable-section{
+    flex-direction: row !important;
+}
 
 /* Toolkit layout */
 
@@ -85,7 +92,6 @@
     border: white thin solid;
     border-radius: 10px;
     z-index: 2147483646;
-    box-sizing: content-box;
 }
 /*Tool tip*/
 .tk-tooltip{
@@ -131,13 +137,13 @@
     height: fit-content !important;
     transition: all .3s ease-in;
 }
-.light-blue{
+.tk-light-blue{
     background-color: #2d529a;
 }
-.light-blue:hover, .light-blue:focus{
+.tk-light-blue:hover, .tk-light-blue:focus{
     background-color: #2d529a;
 }
-.pill{
+.tk-pill{
     position: absolute;
     top: -10px;
     left: -10px;
@@ -147,10 +153,10 @@
     border-radius: 3px;
     padding: 1px;
 }
-.pilled-button-container{
+.tk-pilled-button-container{
     position:relative;
 }
-.pilled-button-container svg{
+.tk-pilled-button-container svg{
     margin-top: 10px;;
 }
 .light-blue-toolkit-active-btn{
@@ -255,5 +261,50 @@ li span strong{
     padding-top: 2px;
 }
 #expandable-section{
+    display:flex;
+    flex-direction: column;
     box-sizing: content-box;
+}
+#testing-toolkit{
+    display:flex;
+    flex-direction: column;
+}
+#utest-toolkit{
+    display:flex;
+    flex-direction: column;
+}
+/* Row view */
+.row-view-testing-toolkit{
+    display: flex;
+    flex-direction: row !important;
+}
+.row-view-toolkit{
+    width: fit-content;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+}
+.row-view-direction-btn{
+    width: 18px;
+    height: 38px;
+    background-color: white;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border-top-right-radius: 0px;
+    border: none
+}
+.row-view-direction-svg{
+    transform:rotate(90deg)
+}
+.d-flex{
+    display: flex !important;
+}
+.d-none{
+    display: none  !important;
+}
+button#direction-btn:hover {
+    background-color:#c1d4f8;
+}
+button#direction-btn:focus {
+    background-color:#8297bf;
 }
