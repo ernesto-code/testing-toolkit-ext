@@ -191,11 +191,11 @@ let codeToDOM = `<div class="layout-container" id="layout-container">
         </button>
     </div>
 </div>
-<button id = "expand-collapse-btn" class="tk-centered tk-btn-dark tk-toolkit-btn" style="border-bottom: none;transform: rotate(180deg);" >
-    <svg class="transition-all" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" width="20px" height="20px" fill="white">
-        <path d="M214.6 470.6c-12.5 12.5-32.8 12.5-45.3 0l-160-160c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 402.7 329.4 265.4c12.5-12.5 32.8-12.5 45.3 0s12.5 32.8 0 45.3l-160 160zm160-352l-160 160c-12.5 12.5-32.8 12.5-45.3 0l-160-160c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 210.7 329.4 73.4c12.5-12.5 32.8-12.5 45.3 0s12.5 32.8 0 45.3z"/>
-    </svg> 
-</button>
+<button id = "expand-collapse-btn" class="tk-centered tk-btn-dark tk-toolkit-btn" style="border-bottom: none;" >
+            <svg id = 'chevron-svg' class="transition-all" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" width="20px" height="20px" fill="white" style="transform: rotate(-90deg);">
+                <path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path>
+            </svg> 
+        </button>
 
 </div>`
 
@@ -224,6 +224,7 @@ const ariaLabelsBtn = document.getElementById('aria-labels-btn')
 const utestToolkitBtn = document.getElementById('utest-toolkit-btn')
 const directionBtn = document.getElementById('direction-btn')
 const directionSvg = document.getElementById('direction-svg')
+const chevronSvg = document.getElementById('chevron-svg')
 
 // UTest toolkit 
 const testingToolkitBtn = document.getElementById('testing-toolkit-btn')
@@ -438,12 +439,58 @@ const toggleButtonSection = ()=>{
     }
 }
 const toggleIconRotation = (elm)=>{
+
+    let initialRotateCSS = elm.style.transform
+    let initialRotate = null
+    let finalRotate = null
+
+    initialRotate =  initialRotateCSS.split('(')[1].split('d')[0]
+
+    if(direction == 'column'){
+
+        if(initialRotate == '-90')
+            finalRotate = parseInt(initialRotate) + 180
+        else
+            finalRotate = parseInt(initialRotate) - 180 
+    }
+    else{
+        if(initialRotate == '-180')
+            finalRotate = parseInt(initialRotate) + 180
+        else
+            finalRotate = parseInt(initialRotate) - 180
+    }
+
+    elm.style.transform = `rotate(${finalRotate}deg)`
+
+
+
+/*
+
+        if( elm.style.transform == 'rotate(0deg)'){
+            elm.style.transform = 'rotate(180deg)'
+        }
+        else{
+            elm.style.transform = 'rotate(0deg)'
+        }
+
+    }
+    else{
+        if(!elm.style.transform || elm.style.transform == 'rotate(0deg)'){
+            elm.style.transform = 'rotate(180deg)'
+        }
+        else{
+            elm.style.transform = 'rotate(0deg)'
+        }
+
+    }
+
+/*
     if(!elm.style.transform || elm.style.transform == 'rotate(0deg)'){
         elm.style.transform = 'rotate(180deg)'
     }
     else{
         elm.style.transform = 'rotate(0deg)'
-    }
+    } */
 }
 
 const displayUtestToolkit = () =>{
@@ -640,6 +687,8 @@ const directionChange = () =>{
         directionBtn.classList.add('row-view-direction-btn')
         directionSvg.classList.add('row-view-direction-svg')
         expandableSection.classList.add('row-view-expandable-section')
+        chevronSvg.style.transform = 'rotate(-180deg)'
+
     }
     else{
         direction = 'column'
@@ -649,6 +698,7 @@ const directionChange = () =>{
         directionBtn.classList.remove('row-view-direction-btn')
         directionSvg.classList.remove('row-view-direction-svg')
         expandableSection.classList.remove('row-view-expandable-section')
+        chevronSvg.style.transform = 'rotate(-90deg)'
     }
 
     console.log('Direction changed to ' + direction)
