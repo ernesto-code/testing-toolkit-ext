@@ -462,35 +462,6 @@ const toggleIconRotation = (elm)=>{
 
     elm.style.transform = `rotate(${finalRotate}deg)`
 
-
-
-/*
-
-        if( elm.style.transform == 'rotate(0deg)'){
-            elm.style.transform = 'rotate(180deg)'
-        }
-        else{
-            elm.style.transform = 'rotate(0deg)'
-        }
-
-    }
-    else{
-        if(!elm.style.transform || elm.style.transform == 'rotate(0deg)'){
-            elm.style.transform = 'rotate(180deg)'
-        }
-        else{
-            elm.style.transform = 'rotate(0deg)'
-        }
-
-    }
-
-/*
-    if(!elm.style.transform || elm.style.transform == 'rotate(0deg)'){
-        elm.style.transform = 'rotate(180deg)'
-    }
-    else{
-        elm.style.transform = 'rotate(0deg)'
-    } */
 }
 
 const displayUtestToolkit = () =>{
@@ -547,7 +518,8 @@ const markHeadings = () => {
     const ariaHeadings = null
 
     pageHeadings.forEach((heading)=>{
-        markElement(heading,"red",innerStyle,'marked-headings')
+        markElementNode(heading)
+        //markElement(heading,"red",innerStyle,'marked-headings')
     })
 }
 const markListsListitems = () => {
@@ -674,6 +646,28 @@ const markAriaLabels = () =>{
     console.clear()
     console.log(elementsWithAriaLabel.length + ' elements found on the page with aria-label attribute.')
 }
+
+// -------
+const applyStyle = (elm, bgColor)=>{
+    elm.style.cssText = `
+    position: absolute;
+    font-weight: bold !important;
+    background-color: ${bgColor};
+    color: white;
+    padding: 0 4px;
+    font: 18px 'Arial';
+    letter-spacing: 0px;`
+}
+
+const markElementNode = (elm) => {
+    span = document.createElement("span")
+	span.innerText = elm.tagName
+	applyStyle(span,"red")
+	elm.parentElement.insertAdjacentElement("afterbegin",span)
+	elm.classList.add('red-outline')
+}
+
+
 
 // Buttons calls
 

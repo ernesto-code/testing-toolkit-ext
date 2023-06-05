@@ -308,3 +308,6 @@ button#direction-btn:hover {
 button#direction-btn:focus {
     background-color:#8297bf;
 }
+.red-outline{
+    outline: red solid thin;
+}
