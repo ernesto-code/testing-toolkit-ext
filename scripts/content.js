@@ -513,15 +513,69 @@ const isElementVisible = (element) =>{
 
 // Marking Functions
 
-const markHeadings = () => {
-    const pageHeadings = Array.from(document.querySelectorAll("h1,h2,h3,h4,h5,h6"))
-    const ariaHeadings = null
+const markElements = (elementsToOutline) => {
 
-    pageHeadings.forEach((heading)=>{
-        markElementNode(heading)
-        //markElement(heading,"red",innerStyle,'marked-headings')
-    })
+    console.log("marking elements...")
+
+    let counter = 0
+
+    elementsToOutline.forEach((elm)=>{
+            if( isElementVisible(elm) ){
+                console.log('Element ', counter + 1)
+                console.log(elm)
+                markElementNode(elm, 'red')
+                elm.classList.add('tk-red-outline') // Style headings nodes
+                counter++
+                
+                //markElementDisplayAttribute(elm,"alt","red",innerStyle,"marked-images-alt-text") 
+            }
+        })
+
+        console.log(counter + ' headings found on the page')    
 }
+const markAriaHeadings = (elementsToOutline) => {
+
+    console.log("marking elements...")
+
+    let counter = 0
+
+    elementsToOutline.forEach((elm)=>{
+            if( isElementVisible(elm) ){
+                console.log('Element ', counter + 1)
+                console.log(elm)
+                
+                // Adding marker element
+                span = document.createElement("span")
+                span.classList.add('tk-marker')
+                span.innerText = 'H' + elm.getAttribute('aria-level')
+                applyStyle(span,'blue')
+                elm.insertAdjacentElement("afterbegin",span)
+                
+
+                elm.classList.add('tk-red-outline') // Style headings nodes
+                counter++
+                
+                //markElementDisplayAttribute(elm,"alt","red",innerStyle,"marked-images-alt-text") 
+            }
+        })
+
+        console.log(counter + ' headings found on the page')    
+}
+const unmarkElements = (outlinedElements) =>{
+    
+    console.log("unmarking elements...")
+    const markers = Array.from(document.getElementsByClassName('tk-marker'))
+
+    // Remove class form headings
+    outlinedElements.forEach(elm=>{
+        elm.classList.remove('tk-red-outline')
+    })
+    // Remove markers
+    if(markers)
+        markers.forEach(marker => marker.remove())
+
+}
+
 const markListsListitems = () => {
     const pageLists = Array.from(document.querySelectorAll("ul,ol"))
     const ariaListsListitems = null
@@ -659,15 +713,13 @@ const applyStyle = (elm, bgColor)=>{
     letter-spacing: 0px;`
 }
 
-const markElementNode = (elm) => {
+const markElementNode = (elm, color) => {
     span = document.createElement("span")
-	span.innerText = elm.tagName
-	applyStyle(span,"red")
-	elm.parentElement.insertAdjacentElement("afterbegin",span)
-	elm.classList.add('red-outline')
+    span.classList.add('tk-marker')
+    span.innerText = elm.tagName
+	applyStyle(span,color)
+	elm.insertAdjacentElement("afterbegin",span)
 }
-
-
 
 // Buttons calls
 
@@ -701,14 +753,17 @@ const directionChange = () =>{
 
 const headings = () =>{
 
+    const pageHeadings = Array.from(document.querySelectorAll("h1,h2,h3,h4,h5,h6"))
+    const ariaHeadings = Array.from(document.querySelectorAll("[role='heading']"))
     
     if(isActivatedTheBtn(headingBtn)) {
-        scrollToTop()
-        markHeadings()
+        markElements(pageHeadings)
+        markAriaHeadings(ariaHeadings)
+        
     }
-    else 
-        clearOverlay('marked-headings')
-
+    else {
+        unmarkElements(pageHeadings)
+    }
     toggleButton(headingBtn)
 }
 const expandCollapse = () =>{
