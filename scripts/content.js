@@ -552,7 +552,7 @@ const markAriaHeadings = (elementsToOutline) => {
                 elm.insertAdjacentElement("afterbegin",span)
                 
 
-                elm.classList.add('tk-red-outline') // Style headings nodes
+                elm.classList.add('tk-blue-outline') // Style headings nodes
                 counter++
                 
                 //markElementDisplayAttribute(elm,"alt","red",innerStyle,"marked-images-alt-text") 
@@ -569,6 +569,7 @@ const unmarkElements = (outlinedElements) =>{
     // Remove class form headings
     outlinedElements.forEach(elm=>{
         elm.classList.remove('tk-red-outline')
+        elm.classList.remove('tk-blue-outline')
     })
     // Remove markers
     if(markers)
@@ -763,6 +764,7 @@ const headings = () =>{
     }
     else {
         unmarkElements(pageHeadings)
+        unmarkElements(ariaHeadings)
     }
     toggleButton(headingBtn)
 }

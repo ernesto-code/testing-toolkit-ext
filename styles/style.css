@@ -311,4 +311,7 @@ button#direction-btn:focus {
 .tk-red-outline{
     outline: red solid 2px;
 }
+.tk-blue-outline{
+    outline: blue solid 2px;
+}
 
