@@ -8,13 +8,14 @@
 .tk-btn-dark{
     width: fit-content;
     height: fit-content;
-    margin: 10px;
+    margin: 5px !important;
     padding: 5px 20px;
     background-color: #132342;
-    border: none;
+    border: none !important;
     color: white;
     border-radius: 5px;
     font-size: 16px;
+    box-shadow: none !important;
 }
 .tk-btn-dark:focus, .tk-btn-dark:hover{
     background-color: #20293b;
@@ -55,9 +56,13 @@
     width: 38px;
     height: 18px;
     background-color: white;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
-    border:none
+    border-top-left-radius: 8px !important;
+    border-top-right-radius: 8px !important;
+    border-bottom-left-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+    border:none;
+    box-shadow: none !important;
+    
     /* outline: #132342 1px solid; */
     /* outline-offset: -2px; */
 
@@ -287,11 +292,12 @@ li span strong{
 .row-view-direction-btn{
     width: 18px;
     height: 38px;
-    background-color: white;
-    border-top-left-radius: 8px;
-    border-bottom-left-radius: 8px;
-    border-top-right-radius: 0px;
-    border: none
+    /*background-color: white;*/
+    border-top-left-radius: 8px !important;
+    border-bottom-left-radius: 8px !important;
+    border-top-right-radius: 0px !important;
+    border-bottom-right-radius: 0px !important;
+    border: none !important;
 }
 .row-view-direction-svg{
     transform:rotate(90deg)
@@ -310,8 +316,17 @@ button#direction-btn:focus {
 }
 .tk-red-outline{
     outline: red solid 2px;
+    outline-offset: -2px;
+    z-index: 10000000;
+
 }
 .tk-blue-outline{
     outline: blue solid 2px;
+    outline-offset: -2px;
+    z-index: 10000000;
 }
-
+.tk-blue-outline-outter{
+    outline: blue 2px solid;
+    outline-offset: 1px;
+    z-index: 10000000;
+}

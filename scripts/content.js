@@ -513,7 +513,7 @@ const isElementVisible = (element) =>{
 
 // Marking Functions
 
-const markElements = (elementsToOutline) => {
+const markElements = (elementsToOutline, outter) => {
 
     console.log("marking elements...")
 
@@ -523,15 +523,15 @@ const markElements = (elementsToOutline) => {
             if( isElementVisible(elm) ){
                 console.log('Element ', counter + 1)
                 console.log(elm)
-                markElementNode(elm, 'red')
-                elm.classList.add('tk-red-outline') // Style headings nodes
-                counter++
+                markElementNode(elm, 'red', outter)
+                !outter ? elm.classList.add('tk-red-outline') : elm.classList.add('tk-blue-outline-outter')
                 
-                //markElementDisplayAttribute(elm,"alt","red",innerStyle,"marked-images-alt-text") 
+                counter++
             }
         })
 
-        console.log(counter + ' headings found on the page')    
+    console.log(counter + ' elements found on the page') 
+
 }
 const markAriaHeadings = (elementsToOutline) => {
 
@@ -567,9 +567,10 @@ const unmarkElements = (outlinedElements) =>{
     const markers = Array.from(document.getElementsByClassName('tk-marker'))
 
     // Remove class form headings
-    outlinedElements.forEach(elm=>{
+    outlinedElements.forEach(elm =>{
         elm.classList.remove('tk-red-outline')
         elm.classList.remove('tk-blue-outline')
+        elm.classList.remove('tk-blue-outline-outter')
     })
     // Remove markers
     if(markers)
@@ -578,16 +579,9 @@ const unmarkElements = (outlinedElements) =>{
 }
 
 const markListsListitems = () => {
-    const pageLists = Array.from(document.querySelectorAll("ul,ol"))
-    const ariaListsListitems = null
-    const pageListitems = Array.from(document.querySelectorAll("li"))
-
-    pageLists.forEach((elm)=>{
-        markElement(elm,"blue",innerStyle,'marked-listslistitems')
-    })
-    pageListitems.forEach((elm)=>{
-        markElement(elm,"green",innerStyle,"marked-listslistitems")
-    })
+    
+    markElements(pageLists,'outter')
+    markElements(pageListitems)
 }
 const markBrs = () =>{
 
@@ -711,14 +705,25 @@ const applyStyle = (elm, bgColor)=>{
     color: white;
     padding: 0 4px;
     font: 18px 'Arial';
+    letter-spacing: 0px;
+    z-index: 100000000;`
+}
+const applyOutterStyle = (elm, bgColor)=>{
+    elm.style.cssText = `
+    position: relative;
+    font-weight: bold !important;
+    background-color: ${bgColor};
+    color: white;
+    padding: 0 4px;
+    font: 18px 'Arial';
     letter-spacing: 0px;`
 }
 
-const markElementNode = (elm, color) => {
+const markElementNode = (elm, color, outter) => {
     span = document.createElement("span")
     span.classList.add('tk-marker')
     span.innerText = elm.tagName
-	applyStyle(span,color)
+	!outter ? applyStyle(span,color) : applyOutterStyle(span,'blue')
 	elm.insertAdjacentElement("afterbegin",span)
 }
 
@@ -766,6 +771,7 @@ const headings = () =>{
         unmarkElements(pageHeadings)
         unmarkElements(ariaHeadings)
     }
+
     toggleButton(headingBtn)
 }
 const expandCollapse = () =>{
@@ -776,14 +782,21 @@ const expandCollapse = () =>{
 }
 const listsListitems = () =>{
 
-    if(isActivatedTheBtn(listsBtn)) {
-        scrollToTop()
-        markListsListitems()
+    const pageLists = Array.from(document.querySelectorAll("ul,ol"))
+    const ariaListsListitems = null
+    const pageListitems = Array.from(document.querySelectorAll("li"))
+
+    if(isActivatedTheBtn(listsBtn)){
+        markElements(pageLists, 'outter')
+        markElements(pageListitems)
     }
-    else 
-        clearOverlay('marked-listslistitems')
+    else {
+        unmarkElements(pageLists)
+        unmarkElements(pageListitems)
+    }
 
     toggleButton(listsBtn)
+
 }
 const brFinder = () => {
 
