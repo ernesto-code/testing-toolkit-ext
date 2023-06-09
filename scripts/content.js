@@ -937,8 +937,6 @@ const links = () =>{
 
 const equalHref = () =>{
 
-    console.log('hrefs')
-
     let repeatedHref = []
     let repeated = 0
     let colorToOutlineRepeated = randomColor()
@@ -964,17 +962,19 @@ const equalHref = () =>{
         repeatedHref.forEach( href => {
             
             colorToOutlineRepeated = randomColor()
-
+            console.log('________________________________________')
+            console.log('%c  ', `background-color:#${colorToOutlineRepeated}`,repeatedHref.indexOf(href))
+            console.log( href)
+            
             links.forEach( link =>{ 
                     if(link.getAttribute('href') == href){
+                        console.log(link)
                         outlineElement(link, `#${colorToOutlineRepeated}`)
                         markElementByText(link, repeatedHref.indexOf(href), `#${colorToOutlineRepeated}`)
                     }
             })
 
         })
-
-        console.log( repeatedHref)
 }
 const brFinder = () => {
 
