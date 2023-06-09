@@ -940,9 +940,11 @@ const equalHref = () =>{
     let repeatedHref = []
     let repeated = 0
     let colorToOutlineRepeated = randomColor()
+    let makers = document.querySelectorAll('tk-marked-element-text')
 
     const links = document.querySelectorAll("a")
 
+    if(isActivatedTheBtn(hrefsBtn)) {
         // Searching duplicated URLs and storing in repeatedHref array
         links.forEach(link =>{
             links.forEach(secLink =>{
@@ -958,7 +960,6 @@ const equalHref = () =>{
         })
 
         // Finding every link with the repeated URL and styling them
-
         repeatedHref.forEach( href => {
             
             colorToOutlineRepeated = randomColor()
@@ -975,6 +976,12 @@ const equalHref = () =>{
             })
 
         })
+    }
+    else{
+        removeDashedOutline()
+        unmarkElements(makers, 'tk-marked-element-text')
+    }
+    toggleButton(hrefsBtn)
 }
 const brFinder = () => {
 
