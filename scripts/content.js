@@ -57,9 +57,17 @@ let codeToDOM = `<div class="layout-container" id="layout-container">
                 <path d="M160 80H512c8.8 0 16 7.2 16 16V320c0 8.8-7.2 16-16 16H490.8L388.1 178.9c-4.4-6.8-12-10.9-20.1-10.9s-15.7 4.1-20.1 10.9l-52.2 79.8-12.4-16.9c-4.5-6.2-11.7-9.8-19.4-9.8s-14.8 3.6-19.4 9.8L175.6 336H160c-8.8 0-16-7.2-16-16V96c0-8.8 7.2-16 16-16zM96 96V320c0 35.3 28.7 64 64 64H512c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H160c-35.3 0-64 28.7-64 64zM48 120c0-13.3-10.7-24-24-24S0 106.7 0 120V344c0 75.1 60.9 136 136 136H456c13.3 0 24-10.7 24-24s-10.7-24-24-24H136c-48.6 0-88-39.4-88-88V120zm208 24a32 32 0 1 0 -64 0 32 32 0 1 0 64 0z"/>
             </svg>
         </button>
-        <!-- href -->
-        <button id='href-btn' class="tk-centered tk-btn-dark tk-toolkit-btn">
-            href
+        <!-- links -->
+        <button id='links-btn' class="tk-centered tk-btn-dark tk-toolkit-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" width="18px" height="18px" fill="white">
+                <path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/>
+            </svg>
+        </button>
+        <!-- hrefs -->
+        <button id='hrefs-btn' class="tk-centered tk-btn-dark tk-toolkit-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" width="18px" height="18px" fill="white">
+                <path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L489.3 358.2l90.5-90.5c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114l-96 96-31.9-25C430.9 239.6 420.1 175.1 377 132c-52.2-52.3-134.5-56.2-191.3-11.7L38.8 5.1zM239 162c30.1-14.9 67.7-9.9 92.8 15.3c20 20 27.5 48.3 21.7 74.5L239 162zM406.6 416.4L220.9 270c-2.1 39.8 12.2 80.1 42.2 110c38.9 38.9 94.4 51 143.6 36.3zm-290-228.5L60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5l61.8-61.8-50.6-39.9z"/>
+            </svg>
         </button>
         <!-- Br finder -->
         <button id='brfinder-btn' class="tk-centered tk-btn-dark tk-toolkit-btn" >
@@ -215,7 +223,8 @@ const brFinderBtn = document.getElementById('brfinder-btn')
 const liveRegionsBtn = document.getElementById('liveregions-btn')
 const imageAltText = document.getElementById('image-alt-text-btn')
 const imageNullAltTextbtn = document.getElementById('image-null-alt-text-btn')
-const hrefBtn = document.getElementById('href-btn')
+const linksBtn = document.getElementById('links-btn')
+const hrefsBtn = document.getElementById('hrefs-btn')
 const focusIndicatorBtn = document.getElementById('focus-indicator-btn')
 const currentlyFocusedBtn = document.getElementById('currently-focused-btn')
 const textSpacingBtn = document.getElementById('text-spacing-btn')
@@ -498,7 +507,7 @@ const displayTestingToolkit = () =>{
 const isElementVisible = (element) =>{
 
     const displaying = window.getComputedStyle(element, null).display
-    const visibility = window.getComputedStyle(element, null).display
+    const visibility = window.getComputedStyle(element, null).visibility 
 
     if(displaying == 'none')
         return false
@@ -511,35 +520,42 @@ const isElementVisible = (element) =>{
     }
 }
 
+const randomColor = () => {
+    return Math.floor(Math.random()*16777215).toString(16);
+}
+
 // Marking Functions
 
-const markElements = (elementsToOutline, outter) => {
-
-    console.log("marking elements...")
+const markElements = (elementsToOutline, outter, color, identifierClass, pos, attr) => {
 
     let counter = 0
+    console.log('%cMarking native HTML elements...','background-color:black;color:white;')
 
     elementsToOutline.forEach((elm)=>{
+        if(!document.getElementById('toolkit').contains(elm)){
+            console.log(elm)
             if( isElementVisible(elm) ){
                 console.log('Element ', counter + 1)
                 console.log(elm)
-                markElementNode(elm, 'red', outter)
-                !outter ? elm.classList.add('tk-red-outline') : elm.classList.add('tk-blue-outline-outter')
+                pos == 'begin' ? markElementNode(elm, color, outter, identifierClass) : markElementNodeAfterEnd(elm, color, outter, identifierClass, attr)
+                //!outter ? elm.classList.add('tk-red-outline') : elm.classList.add('tk-blue-outline-outter')
                 
                 counter++
             }
-        })
+        }
+    })
+        
 
-    console.log(counter + ' elements found on the page') 
-
+    console.log('%c' + +counter + ' elements found on the page','background-color:black;color:white;') 
 }
-const markAriaHeadings = (elementsToOutline) => {
 
-    console.log("marking elements...")
+const markAriaElements = (elementsToOutline, identifier, otherAttr, markerColor, identifierClass) => {
 
     let counter = 0
 
+    console.log('%cMarking ARIA elements...','background-color:#666;color:white;')
     elementsToOutline.forEach((elm)=>{
+        if(!document.getElementById('toolkit').contains(elm)){
             if( isElementVisible(elm) ){
                 console.log('Element ', counter + 1)
                 console.log(elm)
@@ -547,30 +563,32 @@ const markAriaHeadings = (elementsToOutline) => {
                 // Adding marker element
                 span = document.createElement("span")
                 span.classList.add('tk-marker')
-                span.innerText = 'H' + elm.getAttribute('aria-level')
-                applyStyle(span,'blue')
+                span.classList.add(identifierClass)
+                !otherAttr ? span.innerText = identifier : span.innerText = identifier + elm.getAttribute(otherAttr)
+                applyStyle(span,markerColor)
+                span.style.position = 'relative'
                 elm.insertAdjacentElement("afterbegin",span)
                 
-
-                elm.classList.add('tk-blue-outline') // Style headings nodes
+                //elm.classList.add('tk-blue-outline') // Style headings nodes
                 counter++
-                
-                //markElementDisplayAttribute(elm,"alt","red",innerStyle,"marked-images-alt-text") 
             }
-        })
+        }
+    })
+        console.log('%c'+ counter + ' elements found on the page', 'background-color:#666;color:white;')   
 
-        console.log(counter + ' headings found on the page')    
 }
-const unmarkElements = (outlinedElements) =>{
+
+const unmarkElements = (outlinedElements, identifierClass) =>{
     
     console.log("unmarking elements...")
-    const markers = Array.from(document.getElementsByClassName('tk-marker'))
+    const markers = Array.from(document.getElementsByClassName(identifierClass))
 
     // Remove class form headings
     outlinedElements.forEach(elm =>{
         elm.classList.remove('tk-red-outline')
         elm.classList.remove('tk-blue-outline')
         elm.classList.remove('tk-blue-outline-outter')
+        elm.classList.remove('tk-red-outline-outter')
     })
     // Remove markers
     if(markers)
@@ -578,11 +596,138 @@ const unmarkElements = (outlinedElements) =>{
 
 }
 
-const markListsListitems = () => {
-    
-    markElements(pageLists,'outter')
-    markElements(pageListitems)
+const markElementByText = (elm, text, color) =>{
+    if(!document.getElementById('toolkit').contains(elm)){
+        //console.log(elm)
+        if( isElementVisible(elm) ){
+            span = document.createElement("span")
+            span.classList.add('tk-marked-element-text')
+            span.innerText = text
+            applyOutterStyle(span,color)
+            elm.insertAdjacentElement("afterbegin", span)
+            
+        }
+    }
+
 }
+const outlineElements = (elementsToOutline, color) =>{
+    
+    elementsToOutline.forEach((elm)=>{
+        if(!document.getElementById('toolkit').contains(elm)){
+            if( isElementVisible(elm) ){
+                elm.classList.add(`tk-${color}-outline`)
+        
+            }
+        }
+    })
+}
+const outlineContainerElements = (elementsToOutline, color) =>{
+    
+    elementsToOutline.forEach((elm)=>{
+        if(!document.getElementById('toolkit').contains(elm)){
+            if( isElementVisible(elm) ){
+                elm.classList.add(`tk-${color}-outline-outter`)
+            }
+        }
+    })
+}
+
+const outlineElement = (elm, color) =>{
+
+        if(!document.getElementById('toolkit').contains(elm)){
+            if( isElementVisible(elm) ){
+                elm.setAttribute('data-tk-outlined','yes')
+                elm.style.outline = `${color} 2px dashed`
+                
+            }
+        }
+}
+
+const removeDashedOutline = () =>{
+
+    const outlinedElements = document.querySelectorAll("[data-tk-outlined = 'yes']")
+
+    outlinedElements.forEach( elm =>{
+        elm.style.outline = 'none'
+    })
+
+}
+
+
+// -------
+const applyStyle = (elm, bgColor)=>{
+    elm.style.cssText = `
+    position: absolute;
+    font-weight: bold !important;
+    background-color: ${bgColor};
+    color: white;
+    padding: 0 4px;
+    font: 18px 'Arial';
+    letter-spacing: 0px;
+    z-index: 2147483646;`
+}
+const applyOutterStyle = (elm, bgColor)=>{
+    elm.style.cssText = `
+    position: relative;
+    font-weight: bold !important;
+    background-color: ${bgColor};
+    color: white;
+    padding: 0 4px;
+    font: 18px 'Arial';
+    letter-spacing: 0px;
+    z-index: 2147483646`
+}
+
+const markElementNode = (elm, color, outter, identifierClass) => {
+
+    if( isElementVisible(elm) ){
+        span = document.createElement("span")
+        span.classList.add('tk-marker')
+        span.classList.add(identifierClass)
+        span.innerText = elm.tagName
+        !outter ? applyStyle(span,color) : applyOutterStyle(span,color)
+        elm.insertAdjacentElement("afterbegin", span)
+    }
+    else
+        console.log('Hidden element found!')
+}
+
+const markElementNodeAfterEnd = (elm, color, outter, identifierClass, attr) => {
+
+    if( isElementVisible(elm) ){
+        span = document.createElement("span")
+        span.classList.add('tk-marker')
+        span.classList.add(identifierClass)
+        !attr ? span.innerText = elm.tagName : span.innerText = elm.getAttribute(attr) ? elm.getAttribute(attr) : 'null'
+        !outter ? applyStyle(span,color) : applyOutterStyle(span,color)
+        elm.insertAdjacentElement("beforebegin", span)
+    }
+    else
+        console.log('Hidden element found!')
+}
+
+// ---------
+const markImageNullAlt = () =>{
+    let counter = 0
+    const images = document.querySelectorAll("img")
+    
+    console.clear()
+    images.forEach(elm=>{
+        if(!elm.getAttribute("alt")){
+            if(!document.getElementById('toolkit').contains(elm)){
+                if( isElementVisible(elm) ){
+                    console.log('Element ', counter + 1)
+                    console.log(elm)
+                    markElementDisplayAttribute(elm,"alt","red",innerStyle,"marked-images-null-alt-text")
+                    counter++
+                }
+            }
+        }
+    })
+    
+    console.log(counter + ' images found on the page with null attribute.')
+}
+
 const markBrs = () =>{
 
     const brElements = document.querySelectorAll("br")
@@ -609,58 +754,7 @@ const markLiveRegions = () =>{
     
     //console.log(liveRegions.length + ' live regions elements found on the page')
 }
-const markImageAltText = () =>{
-    const images = document.querySelectorAll("img")
-    const ariaImages = document.querySelectorAll("[role='img']")
-    let counter = 0
-    
-    console.clear()
 
-    images.forEach(elm=>{
-        if(!document.getElementById('toolkit').contains(elm)){
-            if( isElementVisible(elm) ){
-                console.log('Element ', counter + 1)
-                console.log(elm)
-                markElementDisplayAttribute(elm,"alt","red",innerStyle,"marked-images-alt-text")
-                counter++
-            }
-        }
-    })
-
-    ariaImages.forEach(elm=>{
-        if(!document.getElementById('toolkit').contains(elm)){
-            if( isElementVisible(elm) ){
-                console.log('Element ', counter + 1)
-                console.log(elm)
-                markElementDisplayAttribute(elm,"aria-label","red",innerStyle,"marked-images-alt-text")
-                counter++
-            }
-        }
-    })
-    
-    console.log(counter + ' images found on the page')
-
-}
-const markImageNullAlt = () =>{
-    let counter = 0
-    const images = document.querySelectorAll("img")
-    
-    console.clear()
-    images.forEach(elm=>{
-        if(!elm.getAttribute("alt")){
-            if(!document.getElementById('toolkit').contains(elm)){
-                if( isElementVisible(elm) ){
-                    console.log('Element ', counter + 1)
-                    console.log(elm)
-                    markElementDisplayAttribute(elm,"alt","red",innerStyle,"marked-images-null-alt-text")
-                    counter++
-                }
-            }
-        }
-    })
-    
-    console.log(counter + ' images found on the page with null attribute.')
-}
 
 const markHrefs = () =>{
     let linksSameUrls = 0
@@ -696,36 +790,6 @@ const markAriaLabels = () =>{
     console.log(elementsWithAriaLabel.length + ' elements found on the page with aria-label attribute.')
 }
 
-// -------
-const applyStyle = (elm, bgColor)=>{
-    elm.style.cssText = `
-    position: absolute;
-    font-weight: bold !important;
-    background-color: ${bgColor};
-    color: white;
-    padding: 0 4px;
-    font: 18px 'Arial';
-    letter-spacing: 0px;
-    z-index: 100000000;`
-}
-const applyOutterStyle = (elm, bgColor)=>{
-    elm.style.cssText = `
-    position: relative;
-    font-weight: bold !important;
-    background-color: ${bgColor};
-    color: white;
-    padding: 0 4px;
-    font: 18px 'Arial';
-    letter-spacing: 0px;`
-}
-
-const markElementNode = (elm, color, outter) => {
-    span = document.createElement("span")
-    span.classList.add('tk-marker')
-    span.innerText = elm.tagName
-	!outter ? applyStyle(span,color) : applyOutterStyle(span,'blue')
-	elm.insertAdjacentElement("afterbegin",span)
-}
 
 // Buttons calls
 
@@ -763,40 +827,154 @@ const headings = () =>{
     const ariaHeadings = Array.from(document.querySelectorAll("[role='heading']"))
     
     if(isActivatedTheBtn(headingBtn)) {
-        markElements(pageHeadings)
-        markAriaHeadings(ariaHeadings)
-        
+        markElements(pageHeadings, null, 'red', 'tk-headings','begin')
+        outlineElements(pageHeadings,'red')
+        markAriaElements(ariaHeadings,'aH','aria-level','blue','tk-headings')
+        outlineElements(ariaHeadings,'blue')
     }
     else {
-        unmarkElements(pageHeadings)
-        unmarkElements(ariaHeadings)
+        unmarkElements(pageHeadings, 'tk-headings')
+        unmarkElements(ariaHeadings, 'tk-headings')
     }
-
     toggleButton(headingBtn)
-}
-const expandCollapse = () =>{
-
-    toggleButtonSection()
-    toggleButton(expandCollapseBtn)
-    toggleIconRotation(expandCollapseBtn.firstElementChild)
 }
 const listsListitems = () =>{
 
     const pageLists = Array.from(document.querySelectorAll("ul,ol"))
-    const ariaListsListitems = null
     const pageListitems = Array.from(document.querySelectorAll("li"))
 
+    const ariaLists = Array.from(document.querySelectorAll("[role='list']"))
+    const ariaListitems = Array.from(document.querySelectorAll("[role='listitem']"))
+
     if(isActivatedTheBtn(listsBtn)){
-        markElements(pageLists, 'outter')
-        markElements(pageListitems)
+        markElements(pageLists, 'outter','blue','tk-list', 'begin')
+        outlineContainerElements(pageLists,'blue')
+        markElements(pageListitems, null, 'red','tk-list', 'begin')
+        outlineElements(pageListitems, 'red')
+
+        markAriaElements(ariaLists, 'aL', null, 'blue','tk-list', 'begin')
+        outlineContainerElements(ariaLists, 'blue')
+        markAriaElements(ariaListitems, 'aLi', null, 'blue','tk-list', 'begin')
+        outlineElements(ariaListitems, 'blue')
     }
     else {
-        unmarkElements(pageLists)
-        unmarkElements(pageListitems)
+        unmarkElements(pageLists,'tk-list')
+        unmarkElements(pageListitems,'tk-list')
+        unmarkElements(ariaLists, 'tk-list')
+        unmarkElements(ariaListitems, 'tk-list')
     }
 
     toggleButton(listsBtn)
 
+}
+const imageAlText = () =>{
+
+    const images = document.querySelectorAll("img")
+    const ariaImages = document.querySelectorAll("[role='img']")
+    
+    if(isActivatedTheBtn(imageAltText)) {
+    
+        markElements(images, 'outter', 'red','tk-images','end','alt')
+        outlineElements(images,'red')
+        markElements(ariaImages, 'outter', 'red','tk-images','end','aria-label')
+        outlineElements(ariaImages,'red')
+
+    }
+    else {
+        unmarkElements(images,'tk-images')
+        unmarkElements(ariaImages,'tk-images')
+    }
+
+    toggleButton(imageAltText)
+}
+const imageWithNullAltText = () =>{
+    const images = document.querySelectorAll("img")
+    const ariaImages = document.querySelectorAll("[role='img']")
+
+    const imageNullAlt = []
+    const ariaImageNullAlt = []
+
+    images.forEach(img =>{
+        !img.getAttribute('alt') ? imageNullAlt.push(img) : 0
+    })
+    ariaImages.forEach(img =>{
+        !img.getAttribute('aria-label') ? ariaImageNullAlt.push(img) : 0
+    })
+    
+    if(isActivatedTheBtn(imageNullAltTextbtn)) {
+    
+        markElements(imageNullAlt, 'outter', 'red','tk-images','end','alt')
+        outlineElements(imageNullAlt,'red')
+        markElements(ariaImageNullAlt, 'outter', 'red','tk-images','end','aria-label')
+        outlineElements(ariaImageNullAlt,'red')
+    }
+    else {
+        unmarkElements(imageNullAlt,'tk-images')
+        unmarkElements(ariaImageNullAlt,'tk-images')
+    }
+
+    toggleButton(imageNullAltTextbtn)
+}
+const links = () =>{
+
+    const links = document.querySelectorAll("a")
+    const ariaLinks = document.querySelectorAll("[role='link']")
+
+    if(isActivatedTheBtn(linksBtn)) {
+
+        markElements(links,null,'red','tk-links','begin','href')
+        outlineElements(links,'red')
+        markAriaElements(ariaLinks,'aA',null,'blue','tk-links')
+        outlineElements(ariaLinks,'blue')
+    }
+    else {
+        unmarkElements(links,'tk-links')
+        unmarkElements(ariaLinks,'tk-links')
+    }
+
+    toggleButton(linksBtn)
+}
+
+const equalHref = () =>{
+
+    console.log('hrefs')
+
+    let repeatedHref = []
+    let repeated = 0
+    let colorToOutlineRepeated = randomColor()
+
+    const links = document.querySelectorAll("a")
+
+        // Searching duplicated URLs and storing in repeatedHref array
+        links.forEach(link =>{
+            links.forEach(secLink =>{
+                if(link.getAttribute('href') == secLink.getAttribute('href')){
+                    repeated++
+                }
+            })
+            if(repeated > 1){
+                if(repeatedHref.indexOf(link.getAttribute('href')) == -1)
+                    if(link.getAttribute('href')) repeatedHref.push(link.getAttribute('href'))
+            }
+            repeated = 0
+        })
+
+        // Finding every link with the repeated URL and styling them
+
+        repeatedHref.forEach( href => {
+            
+            colorToOutlineRepeated = randomColor()
+
+            links.forEach( link =>{ 
+                    if(link.getAttribute('href') == href){
+                        outlineElement(link, `#${colorToOutlineRepeated}`)
+                        markElementByText(link, repeatedHref.indexOf(href), `#${colorToOutlineRepeated}`)
+                    }
+            })
+
+        })
+
+        console.log( repeatedHref)
 }
 const brFinder = () => {
 
@@ -820,40 +998,9 @@ const liveRegions = () => {
 
     toggleButton(liveRegionsBtn)
 }
-const imageAlText = () =>{
-    
-    if(isActivatedTheBtn(imageAltText)) {
-        scrollToTop()
-        markImageAltText()
-    }
-    else 
-        clearOverlay('marked-images-alt-text')
 
-    toggleButton(imageAltText)
-}
-const imageWithNullAltText = () =>{
-    
-    if(isActivatedTheBtn(imageNullAltTextbtn)) {
-        scrollToTop()
-        markImageNullAlt()
-    }
-        
-    else 
-        clearOverlay('marked-images-null-alt-text')
 
-    toggleButton(imageNullAltTextbtn)
-}
-const hrefs = () =>{
-    
-    if(isActivatedTheBtn(hrefBtn)) {
-        scrollToTop()
-        markHrefs()
-    }
-    else 
-        clearOverlay('marked-hrefs')
 
-    toggleButton(hrefBtn)
-}
 const focusIndicator = () => {
 
     if(isActivatedTheBtn(focusIndicatorBtn))
@@ -950,6 +1097,15 @@ const pageTitle = () => {
 const closePageTitle = () =>{
     pageTitleContainer.style = 'display:none'
 }
+const expandCollapse = () =>{
+
+    toggleButtonSection()
+    toggleButton(expandCollapseBtn)
+    toggleIconRotation(expandCollapseBtn.firstElementChild)
+}
+
+
+// UTEST toolkit
 
 const testCasePreview = ()=>{
     const details = document.getElementsByClassName('details')[0];
@@ -1031,7 +1187,6 @@ console.log('Bolding ...')
 
     }
 }
-
 const boldTitleSlashSeparator = ()=>{
 
     toggleButton(boldTitleSlashSeparatorBtn)
@@ -1495,9 +1650,13 @@ clickEventListenerAssigner(imageNullAltTextbtn,"click", imageWithNullAltText )
 mouseoverEventListenerAssigner(imageNullAltTextbtn,"mouseover", showTooltip,'Images with null alt' )
 mouseoutEventListenerAssigner(imageNullAltTextbtn,"mouseout", hideTooltip)
 
-clickEventListenerAssigner(hrefBtn,"click", hrefs )
-mouseoverEventListenerAssigner(hrefBtn,"mouseover", showTooltip,'Link / Equal hrefs' )
-mouseoutEventListenerAssigner(hrefBtn,"mouseout", hideTooltip)
+clickEventListenerAssigner(linksBtn,"click", links )
+mouseoverEventListenerAssigner(linksBtn,"mouseover", showTooltip,'Links' )
+mouseoutEventListenerAssigner(linksBtn,"mouseout", hideTooltip)
+
+clickEventListenerAssigner(hrefsBtn,"click", equalHref )
+mouseoverEventListenerAssigner(hrefsBtn,"mouseover", showTooltip,'Equal hrefs' )
+mouseoutEventListenerAssigner(hrefsBtn,"mouseout", hideTooltip)
 
 clickEventListenerAssigner(focusIndicatorBtn,"click", focusIndicator )
 mouseoverEventListenerAssigner(focusIndicatorBtn,"mouseover", showTooltip,'Focus indicator' )

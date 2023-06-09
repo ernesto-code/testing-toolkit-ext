@@ -330,3 +330,9 @@ button#direction-btn:focus {
     outline-offset: 1px;
     z-index: 10000000;
 }
+.tk-red-outline-outter{
+    outline: red 2px solid;
+    outline-offset: 1px;
+    z-index: 10000000;
+}
+
