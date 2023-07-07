@@ -533,18 +533,16 @@ const markElements = (elementsToOutline, outter, color, identifierClass, pos, at
 
     elementsToOutline.forEach((elm)=>{
         if(!document.getElementById('toolkit').contains(elm)){
-            console.log(elm)
+            //console.log(elm)
             if( isElementVisible(elm) ){
                 console.log('Element ', counter + 1)
                 console.log(elm)
                 pos == 'begin' ? markElementNode(elm, color, outter, identifierClass) : markElementNodeAfterEnd(elm, color, outter, identifierClass, attr)
                 //!outter ? elm.classList.add('tk-red-outline') : elm.classList.add('tk-blue-outline-outter')
-                
                 counter++
             }
         }
     })
-        
 
     console.log('%c' + +counter + ' elements found on the page','background-color:black;color:white;') 
 }
@@ -730,11 +728,13 @@ const markImageNullAlt = () =>{
 
 const markBrs = () =>{
 
+    console.clear()
     const brElements = document.querySelectorAll("br")
      brElements.forEach(elm=>{
         markElement(elm,"red",innerStyle,"marked-brs")
+        console.log(elm)
     })
-    console.clear()
+    
     console.log(brElements.length + ' br elements found on the page')
 }
 const markLiveRegions = () =>{
@@ -968,11 +968,14 @@ const equalHref = () =>{
             console.log( href)
             
             links.forEach( link =>{ 
+
+                if( isElementVisible(link)){
                     if(link.getAttribute('href') == href){
                         console.log(link)
                         outlineElement(link, `#${colorToOutlineRepeated}`)
                         markElementByText(link, repeatedHref.indexOf(href), `#${colorToOutlineRepeated}`)
                     }
+                }
             })
 
         })
@@ -985,9 +988,15 @@ const equalHref = () =>{
 }
 const brFinder = () => {
 
+    const brs = document.querySelectorAll('br')
+
     if(isActivatedTheBtn(brFinderBtn)) {
-        scrollToTop()
-        markBrs()
+        
+        markElements(brs,'outter','red','tk-br', 'end')
+        outlineContainerElements(brs,'red')
+        
+        /*scrollToTop()
+        markBrs()*/
     }
     else 
         clearOverlay('marked-brs')
@@ -1736,7 +1745,5 @@ mouseoutEventListenerAssigner(markRowByDblClickBtn,"mouseout", hideTooltip)
 clickEventListenerAssigner(bbvaSessionExtentionBtn,"click", bbvaSessionExtention )
 mouseoverEventListenerAssigner(bbvaSessionExtentionBtn,"mouseover", showTooltip,'BBVA Session extension' )
 mouseoutEventListenerAssigner(bbvaSessionExtentionBtn,"mouseout", hideTooltip)
-
-
 
 
