@@ -97,6 +97,7 @@
     border: white thin solid;
     border-radius: 10px;
     z-index: 2147483646;
+    opacity:1;
 }
 /*Tool tip*/
 .tk-tooltip{

@@ -108,6 +108,14 @@ let codeToDOM = `<div class="layout-container" id="layout-container">
         <button id="page-title-btn" class="tk-centered tk-btn-dark tk-toolkit-btn" >
             Title
         </button>
+        
+        <!-- Change Opacity button-->
+        <button id = "change-opacity-btn" class="tk-centered tk-btn-dark tk-toolkit-btn" style="border-bottom: none;" >
+            <svg id = 'chevron-svg' class="transition-all" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 512" width="20px" height="20px" fill="white" style="">
+                <path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zm151 118.3C226 97.7 269.5 80 320 80c65.2 0 118.8 29.6 159.9 67.7C518.4 183.5 545 226 558.6 256c-12.6 28-36.6 66.8-70.9 100.9l-53.8-42.2c9.1-17.6 14.2-37.5 14.2-58.7c0-70.7-57.3-128-128-128c-32.2 0-61.7 11.9-84.2 31.5l-46.1-36.1zM394.9 284.2l-81.5-63.9c4.2-8.5 6.6-18.2 6.6-28.3c0-5.5-.7-10.9-2-16c.7 0 1.3 0 2 0c44.2 0 80 35.8 80 80c0 9.9-1.8 19.4-5.1 28.2zm9.4 130.3C378.8 425.4 350.7 432 320 432c-65.2 0-118.8-29.6-159.9-67.7C121.6 328.5 95 286 81.4 256c8.3-18.4 21.5-41.5 39.4-64.8L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5l-41.9-33zM192 256c0 70.7 57.3 128 128 128c13.3 0 26.1-2 38.2-5.8L302 334c-23.5-5.4-43.1-21.2-53.7-42.3l-56.1-44.2c-.2 2.8-.3 5.6-.3 8.5z"/>
+            </svg> 
+        </button>
+
         <!-- UTest toolkit button-->
         <button id = "utest-toolkit-btn" class="tk-centered tk-btn-dark tk-toolkit-btn" style="background-color: #2d529a;border-radius: 10px;">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 512" width="18px" height="18px" fill="white" style="padding-top: 5px;">
@@ -190,15 +198,17 @@ let codeToDOM = `<div class="layout-container" id="layout-container">
                     </svg>
                 </div>
             </button>
-       
+        
+
         <!-- UTest toolkit button-->
         <button id = "testing-toolkit-btn" class="tk-centered tk-btn-dark tk-toolkit-btn tk-light-blue" style="background-color: #132342; padding: 3px; border-radius: 10px;">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 512" width="18px" height="18px" fill="white"  style="padding-top: 5px;">
                 <path d="M78.6 5C69.1-2.4 55.6-1.5 47 7L7 47c-8.5 8.5-9.4 22-2.1 31.6l80 104c4.5 5.9 11.6 9.4 19 9.4h54.1l109 109c-14.7 29-10 65.4 14.3 89.6l112 112c12.5 12.5 32.8 12.5 45.3 0l64-64c12.5-12.5 12.5-32.8 0-45.3l-112-112c-24.2-24.2-60.6-29-89.6-14.3l-109-109V104c0-7.5-3.5-14.5-9.4-19L78.6 5zM19.9 396.1C7.2 408.8 0 426.1 0 444.1C0 481.6 30.4 512 67.9 512c18 0 35.3-7.2 48-19.9L233.7 374.3c-7.8-20.9-9-43.6-3.6-65.1l-61.7-61.7L19.9 396.1zM512 144c0-10.5-1.1-20.7-3.2-30.5c-2.4-11.2-16.1-14.1-24.2-6l-63.9 63.9c-3 3-7.1 4.7-11.3 4.7H352c-8.8 0-16-7.2-16-16V102.6c0-4.2 1.7-8.3 4.7-11.3l63.9-63.9c8.1-8.1 5.2-21.8-6-24.2C388.7 1.1 378.5 0 368 0C288.5 0 224 64.5 224 144l0 .8 85.3 85.3c36-9.1 75.8 .5 104 28.7L429 274.5c49-23 83-72.8 83-130.5zM56 432a24 24 0 1 1 48 0 24 24 0 1 1 -48 0z"/>
             </svg>
-        </button>
+        </button>       
     </div>
 </div>
+
 <button id = "expand-collapse-btn" class="tk-centered tk-btn-dark tk-toolkit-btn" style="border-bottom: none;" >
             <svg id = 'chevron-svg' class="transition-all" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" width="20px" height="20px" fill="white" style="transform: rotate(-90deg);">
                 <path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path>
@@ -250,6 +260,8 @@ const bbvaSessionExtentionBtn = document.getElementById('bbva-session-extension-
 
 // MISC
 const expandableSection = document.getElementById('expandable-section')
+const changeOpacityBtn = document.getElementById('change-opacity-btn')
+
 const toolkitElement = document.getElementById('toolkit')
 const utestToolkit = document.getElementById('utest-toolkit')
 const testingToolkit = document.getElementById('testing-toolkit')
@@ -1121,6 +1133,31 @@ const expandCollapse = () =>{
 }
 
 
+const changeOpacity = () =>{
+
+    if(isActivatedTheBtn(changeOpacityBtn)){
+        toolkitElement.addEventListener("mouseover", () => {
+            console.log('OVER ...')
+            toolkitElement.style.opacity = 1
+        },
+            { signal: controller.signal }
+        )
+
+        toolkitElement.addEventListener("mouseout", () => {
+            console.log('OUT...')
+            toolkitElement.style.opacity = 0
+        },
+            { signal: controller.signal }
+        )
+    }
+    else{
+        controller.abort()
+        changeOpacityBtn.style.opacity = '0.3'
+    }
+
+    toggleButton(changeOpacityBtn)
+}
+
 // UTEST toolkit
 
 const testCasePreview = ()=>{
@@ -1633,6 +1670,10 @@ const mouseoutEventListenerAssigner = (elm, type, funct) => {
 // Listeners calls
 
 // Testing toolkit
+
+clickEventListenerAssigner(changeOpacityBtn,"click", changeOpacity )
+mouseoverEventListenerAssigner(changeOpacityBtn,"mouseover", showTooltip,'Change opacity' )
+mouseoutEventListenerAssigner(changeOpacityBtn,"mouseout", hideTooltip)
 
 clickEventListenerAssigner(directionBtn,"click", directionChange )
 mouseoverEventListenerAssigner(directionBtn,"mouseover", showTooltip,'Change direction' )
