@@ -1054,6 +1054,7 @@ const currentlyFocused = () =>{
     }
     else {
         controller.abort()
+        currentlyFocusedBtn.style.opacity = 0.3
     }
     
     toggleButton(currentlyFocusedBtn)
